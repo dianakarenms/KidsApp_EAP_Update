@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="#f2f2e7">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#f95319"
+        android:text="Menú Principal"
+        android:id="@+id/titleTxt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:weightSum="5"
+        android:layout_above="@+id/salirBtn"
+        android:layout_below="@+id/titleTxt"
+        android:orientation="horizontal">
+
+        <GridView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridView"
+            android:layout_below="@+id/imageView3"
+            android:layout_above="@+id/finalizarBtn"
+            android:layout_centerHorizontal="true"
+            android:stretchMode="columnWidth"
+            android:numColumns="3"
+            android:gravity="clip_vertical"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:text="Salir"
+        android:id="@+id/salirBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/botonsalirliso"
+        android:textColor="#fff"
+        android:textSize="35dp"/>
+
+</RelativeLayout>

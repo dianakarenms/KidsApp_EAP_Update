@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5"
+        android:layout_centerInParent="true">
+
+        <ImageSwitcher
+            android:id="@+id/imageSwitcher"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:layout_gravity="center">
+        </ImageSwitcher>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="146dp"
+        android:layout_height="128dp"
+        android:id="@+id/buttonI"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/triangulo1"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="146dp"
+        android:layout_height="128dp"
+        android:id="@+id/buttonD"
+        android:background="@drawable/estrellasola"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible" />
+</RelativeLayout>

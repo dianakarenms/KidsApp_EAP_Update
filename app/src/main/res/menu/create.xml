@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/synch"
+        android:icon="@drawable/peopleicon"
+        android:title="Sincronizar Pacientes"
+        />
+    <item
+        android:id="@+id/upload"
+        android:icon="@drawable/cloudicon"
+        android:title="Subir Datos a la Nube"
+        />
+    <!--<item
+        android:id="@+id/delete"
+        android:title="Borrar Datos Guardados"
+        />-->
+
+    <!--<item
+        android:id="@+id/menu_subheader"
+        android:title=""
+        >
+        <menu>
+            <item
+                android:id="@+id/navigation_sub_item_1"
+                android:icon="@mipmap/ic_launcher"
+                android:title="upload_photos"/>
+            <item
+                android:id="@+id/navigation_sub_item_2"
+                android:icon="@mipmap/ic_launcher"
+                android:title="use_camera"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/reopen"
+        android:title="reopen"
+        android:icon="@mipmap/ic_launcher"
+        />-->
+
+</menu>
