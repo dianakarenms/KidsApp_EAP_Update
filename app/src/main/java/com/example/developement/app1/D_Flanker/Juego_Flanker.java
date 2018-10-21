@@ -3,7 +3,6 @@ package com.example.developement.app1.D_Flanker;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -34,7 +33,7 @@ public class Juego_Flanker extends AppCompatActivity {
     TextToSpeech t1;
     RelativeLayout LayoudPrincipal;
     Button BtnSalir;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
     private ImageSwitcher imageSwitcher;
 
     //StartTimer variables
@@ -80,8 +79,8 @@ public class Juego_Flanker extends AppCompatActivity {
 
         LayoudPrincipal=(RelativeLayout) findViewById(R.id.layoudPrincipal);
 
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         //Metodo ocupado para pasar el texto de la instruccion a sonido.
         t1=new
@@ -153,13 +152,13 @@ public class Juego_Flanker extends AppCompatActivity {
                     BtnIzquierdo.setClickable(false);
                     if (position == 11 ||position == 12 || position == 15 || position == 16 ||position == 31 || position == 32 ||position == 39 || position == 40 ||position == 47 || position == 48 ||position == 55 || position == 56 ||position == 67 || position == 68 ||
                             position == 71 || position == 72 ||position == 75 || position == 76 ||position == 83 || position == 84 ||position == 87 || position == 88 ||position == 91 || position == 92 ||position == 99 || position == 100 ||position == 103 || position == 104 ||position == 115 || position == 116 ||position == 123 || position == 124) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
 
                     }
                     if (position == 3 || position == 4 ||position == 7 || position == 8 ||position == 19 || position == 20 ||position == 23 || position == 24 ||position == 27 || position == 28 ||position == 35 || position == 36 ||position == 43 || position == 44 || position == 51 || position == 52 ||
                             position == 59 || position == 60 ||position == 63 || position == 64 ||position == 79 || position == 80 || position == 95 || position == 96 ||position == 107 || position == 108 ||position == 111 || position == 112 ||position == 119 || position == 120 ||position == 127 ||position == 128) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     }
 
@@ -177,12 +176,12 @@ public class Juego_Flanker extends AppCompatActivity {
                     BtnIzquierdo.setClickable(false);
                     if (position == 11 ||position == 12 || position == 15 || position == 16 ||position == 31 || position == 32 ||position == 39 || position == 40 ||position == 47 || position == 48 ||position == 55 || position == 56 ||position == 67 || position == 68 ||
                             position == 71 || position == 72 ||position == 75 || position == 76 ||position == 83 || position == 84 ||position == 87 || position == 88 ||position == 91 || position == 92 ||position == 99 || position == 100 ||position == 103 || position == 104 ||position == 115 || position == 116 ||position == 123 || position == 124) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     }
                     if (position == 3 || position == 4 ||position == 7 || position == 8 ||position == 19 || position == 20 ||position == 23 || position == 24 ||position == 27 || position == 28 ||position == 35 || position == 36 ||position == 43 || position == 44 || position == 51 || position == 52 ||
                             position == 59 || position == 60 ||position == 63 || position == 64 ||position == 79 || position == 80 || position == 95 || position == 96 ||position == 107 || position == 108 ||position == 111 || position == 112 ||position == 119 || position == 120 ||position == 127 ||position == 128) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     }
 

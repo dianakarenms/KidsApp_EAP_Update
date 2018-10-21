@@ -1,7 +1,6 @@
 package com.example.developement.app1.E_ClavesCentrales;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +25,7 @@ public class Demo_Claves extends AppCompatActivity {
     Button BtnDerecho;
     Button BtnIzquierdo;
     TextToSpeech t1;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
     private ImageSwitcher imageSwitcher;
     private int[] gallery = {
             R.drawable.derecha,R.drawable.clavescruz,R.drawable.idelfin,R.drawable.clavescruz,
@@ -55,8 +54,8 @@ public class Demo_Claves extends AppCompatActivity {
         BtnIzquierdo = (Button) findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
 
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
 
         imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
@@ -90,13 +89,13 @@ public class Demo_Claves extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position == 11 || position==12) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if (position==3 || position==4 || position==7 || position==8) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }
@@ -110,13 +109,13 @@ public class Demo_Claves extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position==3 || position==4 || position==7 || position==8) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if (position == 11 || position==12) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }

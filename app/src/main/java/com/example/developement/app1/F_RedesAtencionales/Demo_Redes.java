@@ -1,7 +1,6 @@
 package com.example.developement.app1.F_RedesAtencionales;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,7 +23,7 @@ public class Demo_Redes extends AppCompatActivity {
 
     Button BtnIzquierdo,BtnDerecho;
     ImageSwitcher imageSwitcher;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
 
     private int[] gallery = {
             R.drawable.puntocentral,R.drawable.central, 2,R.drawable.arribaizquierdos,
@@ -52,8 +51,8 @@ public class Demo_Redes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.f_redes_instr);
 
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         BtnDerecho = (Button) findViewById(R.id.buttonD);
         BtnDerecho.setOnClickListener(onClick);
@@ -82,13 +81,13 @@ public class Demo_Redes extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position == 12 || position == 24 || position==28  || position==32) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if (position == 4 || position == 8 || position==16 || position==20 ) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }
@@ -100,13 +99,13 @@ public class Demo_Redes extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position == 4 || position == 8 || position==16 || position==20 ) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if (position == 12 || position == 24 || position==28  || position==32) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }

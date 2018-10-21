@@ -3,7 +3,6 @@ package com.example.developement.app1.E_ClavesCentrales;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -37,7 +36,7 @@ public class Juego_Claves extends AppCompatActivity {
     Button BtnSalir;
     TextToSpeech t1;
     RelativeLayout LayoudPrincipal;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
 
     //starTimer variables
     long startTime, ellapsedTime;
@@ -142,8 +141,8 @@ public class Juego_Claves extends AppCompatActivity {
         BtnIzquierdo = (Button) findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
         LayoudPrincipal=(RelativeLayout) findViewById(R.id.layoudPrincipal);
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         SharedPreferences prefs = this.getSharedPreferences(
                 "com.example.app", Context.MODE_PRIVATE);
@@ -219,7 +218,7 @@ public class Juego_Claves extends AppCompatActivity {
                             || position==159 || position==160 || position==163 || position==164 || position==167 || position==168 || position==183 || position==184 || position==187 || position==188
                             || position==215 || position==216 || position==219 || position==220 || position==223 || position==224 || position==227 || position==228 || position==239 || position==240 )
                     {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if(position==11 || position ==12 || position ==23 || position ==24 || position==27 || position==28 || position==31 || position==32 || position==43 || position==44
                             || position==51 || position==52 || position==63 || position==64 || position==67 || position==68 || position==71 || position==72 || position==79 || position==80
@@ -228,10 +227,10 @@ public class Juego_Claves extends AppCompatActivity {
 
                             || position==175 || position==176 || position==179 || position==180 || position==191 || position==192 || position==195 || position==196 || position==199 || position==200
                             || position==203 || position==204 || position==207 || position==208 || position==211 || position==212 || position==231 || position==232 || position==235 || position==236 ) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                         result = 2;
@@ -254,7 +253,7 @@ public class Juego_Claves extends AppCompatActivity {
 
                             || position==175 || position==176 || position==179 || position==180 || position==191 || position==192 || position==195 || position==196 || position==199 || position==200
                             || position==203 || position==204 || position==207 || position==208 || position==211 || position==212 || position==231 || position==232 || position==235 || position==236 ) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if(position==3 || position==4 || position==7 || position==8 || position==15 || position==16 || position==19 || position==20 || position==35 || position==36 || position==39 || position==40
                             || position==47 || position==48 || position==55 || position==56 || position==59 || position==60 || position==75 || position==76
@@ -263,10 +262,10 @@ public class Juego_Claves extends AppCompatActivity {
                             || position==159 || position==160 || position==163 || position==164 || position==167 || position==168 || position==183 || position==184 || position==187 || position==188
                             || position==215 || position==216 || position==219 || position==220 || position==223 || position==224 || position==227 || position==228 || position==239 || position==240 )
                     {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                         result = 2;

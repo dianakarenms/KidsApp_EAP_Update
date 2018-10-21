@@ -5,7 +5,6 @@ package com.example.developement.app1.D_Flanker;
  */
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +27,7 @@ public class Demo_Flanker extends AppCompatActivity {
     ImageButton BtnDerecho;
     ImageButton BtnIzquierdo;
     TextToSpeech t1;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
 
     long startTime, ellapsedTime;
     long estimatedTime;
@@ -58,8 +57,8 @@ public class Demo_Flanker extends AppCompatActivity {
         BtnDerecho.setOnClickListener(onClick);
         BtnIzquierdo = (ImageButton) findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null)
@@ -92,12 +91,12 @@ public class Demo_Flanker extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position == 3 || position == 4 || position == 11 || position == 12) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
 
                     }
                     if (position == 7 || position == 8|| position == 15 || position == 16) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     }
                     clickFlag = true;
@@ -107,11 +106,11 @@ public class Demo_Flanker extends AppCompatActivity {
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
                     if (position == 3 || position == 4 || position == 11 || position == 12) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     }
                     if (position == 7 || position == 8|| position == 15 || position == 16) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     }
                     clickFlag = true;

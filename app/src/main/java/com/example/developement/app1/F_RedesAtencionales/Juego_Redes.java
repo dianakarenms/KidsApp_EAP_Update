@@ -3,7 +3,6 @@ package com.example.developement.app1.F_RedesAtencionales;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +28,7 @@ public class Juego_Redes extends AppCompatActivity {
 
     Button BtnIzquierdo,BtnDerecho,BtnPausa;
     ImageSwitcher imageSwitcher;
-    MediaPlayer abucheo, aplauso;
+    //MediaPlayer abucheo, aplauso;
 
     private boolean endFlag;
     private int[] gallery = {
@@ -199,8 +198,8 @@ public class Juego_Redes extends AppCompatActivity {
 
         context = this;
 
-        aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
+        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         BtnDerecho = (Button) findViewById(R.id.buttonD);
         BtnDerecho.setOnClickListener(onClick);
@@ -251,7 +250,7 @@ public class Juego_Redes extends AppCompatActivity {
                                     || position ==312 || position ==316 || position ==320 || position ==328 || position ==344 || position ==356 || position ==360 || position ==388 || position ==392
                                     || position ==412 || position ==416 || position ==420 || position ==432 || position ==444 || position ==448 || position ==456 || position ==468 || position ==472
                                     || position ==476 || position ==484 || position ==488 || position ==500 || position ==504 ) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if ( position == 4 || position == 32 || position == 36 || position == 52 || position == 60 || position == 68 || position == 72 || position == 76 || position == 88
                                     || position == 92 || position == 96 || position == 100 || position == 108 || position == 112 || position == 116 || position == 124
@@ -261,10 +260,10 @@ public class Juego_Redes extends AppCompatActivity {
                                     || position ==348 || position ==352 || position ==364 || position ==368 || position ==372 || position ==376 || position ==380 || position ==384 || position ==396
                                     || position ==400 || position ==404 || position ==408 || position ==424 || position ==428 || position ==436 || position ==440 || position ==452 || position ==460
                                     || position ==464 || position ==480 || position ==492 || position ==496 || position ==508 || position ==512 ) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }
@@ -288,7 +287,7 @@ public class Juego_Redes extends AppCompatActivity {
                         || position ==348 || position ==352 || position ==364 || position ==368 || position ==372 || position ==376 || position ==380 || position ==384 || position ==396
                         || position ==400 || position ==404 || position ==408 || position ==424 || position ==428 || position ==436 || position ==440 || position ==452 || position ==460
                         || position ==464 || position ==480 || position ==492 || position ==496 || position ==508 || position ==512 ) {
-                        aplauso.start();
+                        //aplauso.start();
                         result = 1;
                     } else if ( position == 8 || position == 12 || position == 16 || position == 20 || position == 24 || position == 28 || position == 40 || position == 44 || position == 48
                             || position == 56 || position == 64 || position == 80 || position == 84 || position == 104 || position == 120 || position == 128 || position == 136 || position ==152 || position ==156 || position ==160 || position ==172 || position ==180 || position ==184 || position ==188
@@ -297,10 +296,10 @@ public class Juego_Redes extends AppCompatActivity {
                             || position ==312 || position ==316 || position ==320 || position ==328 || position ==344 || position ==356 || position ==360 || position ==388 || position ==392
                             || position ==412 || position ==416 || position ==420 || position ==432 || position ==444 || position ==448 || position ==456 || position ==468 || position ==472
                             || position ==476 || position ==484 || position ==488 || position ==500 || position ==504 ) {
-                        abucheo.start();
+                        //abucheo.start();
                         result = 0;
                     } else {
-                        abucheo.start();
+                        //abucheo.start();
                         BtnDerecho.setClickable(false);
                         BtnIzquierdo.setClickable(false);
                     }

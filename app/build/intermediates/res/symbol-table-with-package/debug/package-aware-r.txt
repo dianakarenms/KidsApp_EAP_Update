@@ -823,6 +823,7 @@ drawable ic_bxx
 drawable ic_cxx
 drawable ic_dxx
 drawable ic_exx
+drawable ic_menu
 drawable icamaleon
 drawable icangrejo
 drawable icatarina

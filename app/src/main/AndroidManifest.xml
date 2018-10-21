@@ -34,17 +34,17 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_GoNoGo.Juego_GoNoGo"
+            android:name=".C_CPT.Juego_CPT"
             android:label="@string/title_activity_comenzarjuego"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_GoNoGo.Demo_GoNoGo"
+            android:name=".C_CPT.Demo_CPT"
             android:label="@string/title_activity_demo"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_GoNoGo.Instr_GoNoGo"
+            android:name=".C_CPT.Instr_CPT"
             android:label="@string/title_activity_main2_activitymenuprincipalcerdito"
             android:screenOrientation="landscape" >
         </activity>

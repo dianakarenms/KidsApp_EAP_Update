@@ -53,7 +53,7 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
     GridView myGrid;
     ArrayList<ElegirEjercicioObject> list;
 
-    String[] exNames = {"Tarea de Cancelación", "Tarea de Corsi", "Tarea de\r\ngo-nogo", "Tarea de Flankers", "Tarea de Claves Centrales", "Tarea de Redes Atencionales"};
+    String[] exNames = {"Tarea de Cancelación", "Tarea de Corsi", "Tarea de\r\nCPT", "Tarea de Flankers", "Tarea de Claves Centrales", "Tarea de Redes Atencionales"};
     int[] figureImages = {R.drawable.botoncancelacion, R.drawable.botoncorsi, R.drawable.botongonogo, R.drawable.botonflankers, R.drawable.botonclaves, R.drawable.botonredes}; //array de figuras en la carpeta drawable
 
     // Shared Preferences
@@ -249,11 +249,6 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
                 NUM_PAGES = (int) Math.ceil((double) list.size()/24);
                 mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
                 mPager.setAdapter(mPagerAdapter);
-
-                //Log.d("Num pages", Integer.toString(NUM_PAGES));
-                /*adapter = new ElegirEjercicioAdapter(ElegirEjercicioActivity.this, R.layout.elegir_ejercicio_item, list); //
-                adapter.notifyDataSetChanged();
-                myGrid.setAdapter(adapter);*/
 
             } else {
                 // failed to create product
