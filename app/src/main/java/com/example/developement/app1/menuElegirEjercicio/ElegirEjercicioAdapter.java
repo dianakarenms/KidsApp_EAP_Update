@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.developement.app1.C_GoNoGo.Instr_GoNoGo;
+import com.example.developement.app1.C_CPT.Instr_CPT;
 import com.example.developement.app1.B_Corsi.Instr_Corsi;
 import com.example.developement.app1.D_Flanker.Instr_Flanker;
 import com.example.developement.app1.E_ClavesCentrales.Instr_Claves;
@@ -120,7 +120,7 @@ public class ElegirEjercicioAdapter extends ArrayAdapter<ElegirEjercicioObject>
                         i.putExtra("tempData", "");
                         break;
                     case 2:
-                        i = new Intent(context, Instr_GoNoGo.class);
+                        i = new Intent(context, Instr_CPT.class);
                         break;
                     case 3:
                         i = new Intent(context, Instr_Flanker.class);

@@ -9,45 +9,17 @@
         android:layout_height="match_parent"
         android:background="@drawable/portada" >
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/usuarioEdit"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="0.2"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/space"
-            android:background="#fff">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:id="@+id/usuarioEdit"
-                android:hint="Usuario"
-                android:textColorHint="#fff"
-                android:textColor="#fff"
-                android:background="#5fc100"
-                android:textSize="35dp"
-                android:gravity="center" />
-
-            <Space
-                android:layout_width="1dp"
-                android:layout_height="50dp" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:id="@+id/claveEdit"
-                android:hint="Clave"
-                android:inputType="textPassword"
-                android:textColorHint="#fff"
-                android:textColor="#fff"
-                android:background="#5fc100"
-                android:textSize="35dp"
-                android:gravity="center" />
-
-        </LinearLayout>
+            android:hint="Usuario"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:background="#5fc100"
+            android:textSize="35dp"
+            android:gravity="center" />
 
         <Space
             android:id="@+id/space"
