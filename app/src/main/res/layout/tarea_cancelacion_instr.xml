@@ -33,7 +33,7 @@ android:background="#f2f2e7">
     </LinearLayout>
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Finalizar"
         android:id="@+id/finInstrBtn"

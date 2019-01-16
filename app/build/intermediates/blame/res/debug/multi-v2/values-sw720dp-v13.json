@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+            "outputFile": "/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Karencita\\.gradle\\caches\\transforms-1\\files-1.1\\bottomsheet-core-1.5.0.aar\\613820a0e14f98b74c056d00f67af61f\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+                    "source": "/Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-core-1.5.0.aar/cadbb120a9931f21fddd400b605e02df/res/values-sw720dp-v13/values-sw720dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

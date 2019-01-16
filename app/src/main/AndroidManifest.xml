@@ -34,17 +34,17 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_CPT.Juego_CPT"
+            android:name=".C_CPTP.Juego_CPTP"
             android:label="@string/title_activity_comenzarjuego"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_CPT.Demo_CPT"
+            android:name=".C_CPTP.Demo_CPTP"
             android:label="@string/title_activity_demo"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".C_CPT.Instr_CPT"
+            android:name=".C_CPTP.Instr_CPTP"
             android:label="@string/title_activity_main2_activitymenuprincipalcerdito"
             android:screenOrientation="landscape" >
         </activity>

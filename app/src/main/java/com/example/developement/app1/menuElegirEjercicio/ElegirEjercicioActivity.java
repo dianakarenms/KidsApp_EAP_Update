@@ -53,8 +53,8 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
     GridView myGrid;
     ArrayList<ElegirEjercicioObject> list;
 
-    String[] exNames = {"Tarea de Cancelación", "Tarea de Corsi", "Tarea de\r\nCPT", "Tarea de Flankers", "Tarea de Claves Centrales", "Tarea de Redes Atencionales"};
-    int[] figureImages = {R.drawable.botoncancelacion, R.drawable.botoncorsi, R.drawable.botongonogo, R.drawable.botonflankers, R.drawable.botonclaves, R.drawable.botonredes}; //array de figuras en la carpeta drawable
+    String[] exNames = {"Tarea de Cancelación", "Tarea de Corsi", "Tarea de\r\nCPTP", "Tarea de Flankers", "Tarea de Claves Centrales", "Tarea de Redes Atencionales"};
+    int[] figureImages = {R.drawable.botoncancelacion, R.drawable.botoncorsi, R.drawable.botoncptp, R.drawable.botonflankers, R.drawable.botonclaves, R.drawable.botonredes}; //array de figuras en la carpeta drawable
 
     // Shared Preferences
     SharedPreferences prefs;
@@ -204,7 +204,7 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
                 if (success == 1) {
                     exercises = json.getJSONArray(TAG_EXERCISES); //EXERCISES got from the url JSONArray array
                     ElegirEjercicioObject tempExercise;  //tempExercises object
-                    int[] figureImages = {R.drawable.botoncancelacion, R.drawable.botoncorsi, R.drawable.botongonogo, R.drawable.botonflankers, R.drawable.botonclaves, R.drawable.botonredes}; //array de figuras en la carpeta drawable
+                    int[] figureImages = {R.drawable.botoncancelacion, R.drawable.botoncorsi, R.drawable.botoncptp, R.drawable.botonflankers, R.drawable.botonclaves, R.drawable.botonredes}; //array de figuras en la carpeta drawable
 
                     // looping through All Products
                     for (int i = 0; i < exercises.length(); i++) {

@@ -84,9 +84,6 @@ public class SeleccionarLetrasAdapter extends ArrayAdapter<SeleccionarLetrasObje
     public View getView(final int position, View view, ViewGroup viewGroup) {
 
         View row = view;
-
-        // Set row height
-        //row.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 30));
         ViewHolder holder = null;
 
         if(row == null){
@@ -103,52 +100,31 @@ public class SeleccionarLetrasAdapter extends ArrayAdapter<SeleccionarLetrasObje
         }
 
         SeleccionarLetrasObject temp = data.get(position);
-
-        SVG svg = SVGParser.getSVGFromResource(context.getResources(), temp.imageId);
-        final Drawable drawable = svg.createPictureDrawable();
-        holder.myFigure.setImageDrawable(drawable);
+        holder.myFigure.setImageDrawable(context.getResources().getDrawable(temp.imageId));
         holder.myFigure.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         holder.myFigure.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                int wantedPosition = (Integer) v.getTag();
                 RelativeLayout ll = (RelativeLayout) v.getParent();
-                ImageButton btnImg = (ImageButton) ll.findViewById(R.id.imageViewP);
+                ImageButton btnImg = ll.findViewById(R.id.imageViewP);
                 btnImg.setEnabled(false);
-                //controlClass control;
-                // onOff = ((ControlDispActivity)context).controlMethod(onOff);
-                //if(onOff)
-                //btnOnOff.setBackgroundResource(R.drawable.stop);
-                //else
-                //  btnOnOff.setBackgroundResource(R.drawable.play);
-
 
                 Log.i("currentID", String.valueOf(data.get(position).counterId));
                 Log.i("exSolID", String.valueOf(exSol));
 
                 if (data.get(position).counterId == exSol) {
-                    // seleccion de la figura correcta (verde)
-                    //btnImg.setImageResource(R.drawable.correct);
                     btnImg.setBackgroundColor(0xFF2fac66);
                     btnImg.setEnabled(false);
-                    /*Drawable background = btnImg.getDrawable();
-                    background = background.mutate();
-                    background.setColorFilter(0xffff0000, android.graphics.PorterDuff.Mode.MULTIPLY);
-                    btnImg.setBackgroundDrawable(background);*/
                 } else {
                     // figura incorrecta (rojo)
-                    //btnImg.setImageResource(R.drawable.incorrect);
                     btnImg.setBackgroundColor(0xFFbf4c5b);
                     btnImg.setEnabled(false);
-                   /* Drawable background = btnImg.getDrawable();
-                    background = background.mutate();
-                    background.setColorFilter(Color.argb(206, 204, 7, 250), android.graphics.PorterDuff.Mode.SRC_OVER);
-                    btnImg.setBackgroundDrawable(background);*/
                 }
                 // una vez hecho el click se toma el tiempo actual y se le resta el tiempo anterior
                 long elapsedTime = android.os.SystemClock.uptimeMillis() - initTime;
+
                 // se guarda en initTime el tiempo actual para la siguiente pulsacion
                 initTime = android.os.SystemClock.uptimeMillis();
 
@@ -159,17 +135,7 @@ public class SeleccionarLetrasAdapter extends ArrayAdapter<SeleccionarLetrasObje
                 mylist.add(Long.toString(elapsedTime)); // add elapsed time between last click and current click
                 mylist.add(String.valueOf(position)); // add position value
 
-                // se guarda el array en la memoria de la aplicacion
-              /*  SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, 0).edit();
-                editor.putStringSet("guardadito", mylist);
-                editor.commit();*/
-
-                // Log.i("myListArray", String.valueOf(mylist));
-
-                // TODO Auto-generated method stub
                 Log.i("Control Button Clicked", "**********");
-                //Toast.makeText(context, "Posicion: " + wantedPosition,
-                  //      Toast.LENGTH_SHORT).show();
             }
         });
 

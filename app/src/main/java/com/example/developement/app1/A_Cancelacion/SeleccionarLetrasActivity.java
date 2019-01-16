@@ -55,7 +55,6 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
     WebView wv;
 
     //Nombres de los nodos del JSON
-    private static final String TAG_SUCCESS = "success";
     private boolean endFlag;
 
     @Override
@@ -96,26 +95,6 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
         editor.putString("exerciseId", exerciseId);
         editor.commit();
 
-        /*countDownTimer = new CountDownTimer(long_remaingtime, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                long_remaingtime = millisUntilFinished / 1000;
-                Log.i("time", Long.toString(long_remaingtime));
-            }
-
-            public void onFinish() {
-                new AlertDialog.Builder(context)
-                        .setTitle("Mensaje")
-                        .setMessage("Se ha agotado el tiempo")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent i = new Intent(context, ElegirEjercicioActivity.class);
-                                context.startActivity(i);
-                            }
-                        })
-                        .show();
-            }
-        };*/
     }
 
     @Override
@@ -130,7 +109,6 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
                 storeDataInLocalTxt store = new storeDataInLocalTxt();
                 store.saveData(userData.toString(), context);
             } else {
-                //countDownTimer.cancel();
                 Intent i = new Intent(SeleccionarLetrasActivity.this, ElegirEjercicioActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
@@ -148,25 +126,18 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
                     finalizarBtn.setOnClickListener(onClick);
                     finalizarBtn.setTypeface(TF, Typeface.BOLD);
 
-                    /*ImageView titleImg = (ImageView) findViewById(R.id.topTriangleImg);
-
-                    SVG svg = SVGParser.getSVGFromResource(getResources(), R.drawable.ex);
-                    final Drawable drawable = svg.createPictureDrawable();
-                    titleImg.setImageDrawable(drawable);*/
-
                     //inicializar el ArrayList list
                     ArrayList<SeleccionarLetrasObject> list; //this array list id going to store just Single Items
-                    list = new ArrayList<SeleccionarLetrasObject>(); //list empty
+                    list = new ArrayList<>(); //list empty
 
                     Resources res = getApplicationContext().getResources(); //obtiene los elementos necesarios
                     String[] tempFigureNames = res.getStringArray(R.array.figurenames); //array de los nombre de las figuras que se encuentra en <string-array>
                     int[] figureImages = {R.drawable.ic_axx, R.drawable.ic_bxx, R.drawable.ic_cxx, R.drawable.ic_dxx, R.drawable.ic_exx}; //array de figuras en la carpeta drawable
                     //llenar la lista "list"}
-
                     String practiceList = "2,0,1,4,3,2,4,1,4,1,2,4";
+
                     // array to get convert the String from json call, to an String[]
                     String[] sValue = practiceList.split(",");
-
 
                     ArrayList<Integer> practiceFigArray = new ArrayList<Integer>();
                     for (int i = 0; i < sValue.length; i++) {
@@ -188,16 +159,12 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
 
                     adapter = new SeleccionarLetrasAdapter(context, R.layout.cancelacion_single_item, list, Integer.parseInt(exSol));
                     //asignar el objeto gridview a myGrid variable object
-                    GridView myGrid = (GridView) findViewById(R.id.practiceGrid);
+                    GridView myGrid = findViewById(R.id.practiceGrid);
                     myGrid.setAdapter(adapter);
                     break;
 
                 case R.id.BTNjugar:
-                    /*if(nextScreenFlag == false) {
-                        nextScreenFlag = true;
-                        instrucciones();
-                    } else*/
-                        iniciarJuego();
+                    iniciarJuego();
                     break;
 
                 case R.id.continuarBtn:
@@ -215,13 +182,7 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
                         iniciarJuego();
                     } else { //si finalizar
                         finalizarBtn.setClickable(false);
-                        //countDownTimer.cancel();
                         userData = concat(userData, adapter.getMylist());
-                        /*SharedPreferences.Editor editor = prefs.edit();
-                        Set<String> set = new HashSet<String>();
-                        set.addAll(userData);
-                        editor.putStringSet("kidsSave", set);
-                        editor.commit();*/
 
                         endFlag = true;
                         // mostrar gif de fuegos artificiales
@@ -261,23 +222,12 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
         finalizarBtn.setOnClickListener(onClick);
         finalizarBtn.setTypeface(TF, Typeface.BOLD);
 
-       /* ImageView titleImg = (ImageView) findViewById(R.id.imageView3);
-
-        SVG svg = SVGParser.getSVGFromResource(getResources(), R.drawable.ex);
-        final Drawable drawable = svg.createPictureDrawable();
-        titleImg.setImageDrawable(drawable);*/
-
         //inicializar el ArrayList list
         ArrayList<SeleccionarLetrasObject> list; //this array list id going to store just Single Items
-        list = new ArrayList<SeleccionarLetrasObject>(); //list empty
+        list = new ArrayList<>(); //list empty
 
         res = getApplicationContext().getResources(); //obtiene los elementos necesarios
         tempFigureNames = res.getStringArray(R.array.figurenames); //array de los nombre de las figuras que se encuentra en <string-array>
-        //llenar la lista "list"}
-
-        //if(long_remaingtime == 60000)
-            //countDownTimer.start();
-
 
         int size = figArray.size()/60;
         Log.d("size", String.valueOf(size));
@@ -304,7 +254,7 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
 
         adapter = new SeleccionarLetrasAdapter(context, R.layout.cancelacion_single_item, list, Integer.parseInt(exSol));
         //asignar el objeto gridview a myGrid variable object
-        GridView myGrid = (GridView) findViewById(R.id.gridView);
+        GridView myGrid = findViewById(R.id.gridView);
         myGrid.setAdapter(adapter);
     }
 
@@ -313,13 +263,13 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
 
         TextView txt;
 
-        boton = (ImageButton) findViewById(R.id.btnDemo);
+        boton = findViewById(R.id.btnDemo);
         boton.setOnClickListener(onClick);
 
-        playBtn = (ImageButton) findViewById(R.id.BTNjugar);
+        playBtn = findViewById(R.id.BTNjugar);
         playBtn.setOnClickListener(onClick);
 
-        continuarBtn = (Button) findViewById(R.id.continuarBtn);
+        continuarBtn = findViewById(R.id.continuarBtn);
         continuarBtn.setOnClickListener(onClick);
 
         if(nextScreenFlag == false){
@@ -327,40 +277,39 @@ public class SeleccionarLetrasActivity extends AppCompatActivity {
             playBtn.setVisibility(View.INVISIBLE);
             continuarBtn.setVisibility(View.VISIBLE);
 
-            TextView pracTxt = (TextView) findViewById(R.id.practiceTxt);
+            TextView pracTxt = findViewById(R.id.practiceTxt);
             pracTxt.setVisibility(View.INVISIBLE);
 
-            pracTxt = (TextView) findViewById(R.id.playTxt);
+            pracTxt = findViewById(R.id.playTxt);
             pracTxt.setVisibility(View.INVISIBLE);
 
-            pracTxt = (TextView) findViewById(R.id.instrTxt);
+            pracTxt = findViewById(R.id.instrTxt);
             pracTxt.setText("A continuación aparecerán varias figuras geométricas, el instructor te indicará el nombre de cada una de ellas.");
             pracTxt.setTypeface(TF,Typeface.BOLD);
 
-            txt = (TextView)findViewById(R.id.titleTxt);
+            txt = findViewById(R.id.titleTxt);
             txt.setTypeface(TF, Typeface.BOLD);
 
             continuarBtn.setTypeface(TF,Typeface.BOLD);
         } else {
             setContentView(R.layout.cancelacion_instr);
-            ImageView instrImg = (ImageView)findViewById(R.id.instrImage);
-            //instrImg.setVisibility(View.INVISIBLE);
+            ImageView instrImg = findViewById(R.id.instrImage);
             instrImg.setImageResource(R.drawable.trianguloverde);
             instrImg.getLayoutParams().height = 85;
 
-            boton = (ImageButton) findViewById(R.id.btnDemo);
+            boton = findViewById(R.id.btnDemo);
             boton.setOnClickListener(onClick);
 
-            playBtn = (ImageButton) findViewById(R.id.BTNjugar);
+            playBtn = findViewById(R.id.BTNjugar);
             playBtn.setOnClickListener(onClick);
 
-            txt = (TextView)findViewById(R.id.titleTxt);
+            txt = findViewById(R.id.titleTxt);
             txt.setTypeface(TF, Typeface.BOLD);
-            txt = (TextView)findViewById(R.id.playTxt);
+            txt = findViewById(R.id.playTxt);
             txt.setTypeface(TF, Typeface.BOLD);
-            txt = (TextView)findViewById(R.id.practiceTxt);
+            txt = findViewById(R.id.practiceTxt);
             txt.setTypeface(TF, Typeface.BOLD);
-            txt = (TextView)findViewById(R.id.instrTxt);
+            txt = findViewById(R.id.instrTxt);
             txt.setTypeface(TF, Typeface.BOLD);
         }
 

@@ -1,4 +1,4 @@
-#Sun Oct 21 05:33:07 CDT 2018
-base.0=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+#Wed Jan 16 15:21:39 CST 2019
+base.0=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/transforms/dexMerger/debug/1
 path.0=classes.dex
 renamed.0=classes.dex

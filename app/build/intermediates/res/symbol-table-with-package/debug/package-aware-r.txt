@@ -736,8 +736,8 @@ drawable blanco
 drawable botoncancelacion
 drawable botonclaves
 drawable botoncorsi
+drawable botoncptp
 drawable botonflankers
-drawable botongonogo
 drawable botonredes
 drawable botonsalirliso
 drawable bottomsheet_camera
@@ -1172,6 +1172,7 @@ layout b_corsi_instr
 layout cancelacion_gameplay
 layout cancelacion_instr
 layout cancelacion_single_item
+layout cptp_instr
 layout demo_animales
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1193,7 +1194,6 @@ layout f_redes_gameplay
 layout f_redes_instr
 layout flanker_activity_main
 layout fragment_screen_slide_page
-layout gonogo_instr
 layout grid_sheet_view
 layout list_sheet_view
 layout login_layout
@@ -1240,7 +1240,6 @@ menu menu_pescado__presentacion
 mipmap ic_launcher
 raw abucheo
 raw aplauso
-raw aplauso2
 string Instrucciones
 string abc_action_bar_home_description
 string abc_action_bar_up_description

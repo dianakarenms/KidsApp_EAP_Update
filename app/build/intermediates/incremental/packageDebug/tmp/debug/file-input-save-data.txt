@@ -1,31 +1,31 @@
 #Internal package file, do not edit.
-#Sun Oct 21 06:33:01 CDT 2018
-2.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-5.set=ASSET
-0.path=font/ChalkboardSE.ttc
+#Wed Jan 16 16:03:54 CST 2019
+2.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
+5.set=DEX
+0.path=gifs/fuegos3.gif
 2.baseType=DIRECTORY
-3.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+3.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 2.set=ASSET
-1.path=gifs/fuegos1.gif
-4.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+1.path=font/ComicNeueSansID.ttf
+4.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 count=7
 5.baseType=DIRECTORY
-2.path=font/ComicNeueSansID.ttf
-5.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+2.path=gifs/fuegos2.gif
+5.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/dex/debug/mergeDexDebug/out
 4.set=ASSET
-3.path=gifs/fuegos2.gif
-6.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+3.path=font/ChalkboardSE.ttc
+6.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 3.baseType=DIRECTORY
 1.set=ASSET
 4.path=gifs/index.html
-6.set=DEX
+6.set=ASSET
 1.baseType=DIRECTORY
 6.baseType=DIRECTORY
-5.path=gifs/fuegos3.gif
-0.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+5.path=classes.dex
+0.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 0.baseType=DIRECTORY
 3.set=ASSET
-6.path=classes.dex
-1.base=C\:\\AndroidProjects\\KidsApp_EAP\\KidsApp_EAP_Correcto\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+6.path=gifs/fuegos1.gif
+1.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 4.baseType=DIRECTORY
 0.set=ASSET
