@@ -35,22 +35,22 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int grid = 0x7f090065;
-        public static final int icon = 0x7f090069;
-        public static final int label = 0x7f09007b;
-        public static final int list = 0x7f090082;
-        public static final int thumb = 0x7f0900d6;
-        public static final int title = 0x7f0900d8;
+        public static final int grid = 0x7f090063;
+        public static final int icon = 0x7f090067;
+        public static final int label = 0x7f090079;
+        public static final int list = 0x7f090080;
+        public static final int thumb = 0x7f0900d3;
+        public static final int title = 0x7f0900d5;
     }
     public static final class layout {
         private layout() {}
 
         public static final int grid_sheet_view = 0x7f0b003a;
-        public static final int list_sheet_view = 0x7f0b003b;
-        public static final int sheet_grid_item = 0x7f0b0052;
-        public static final int sheet_image_grid_item = 0x7f0b0053;
-        public static final int sheet_list_item = 0x7f0b0054;
-        public static final int sheet_list_item_separator = 0x7f0b0055;
-        public static final int sheet_list_item_subheader = 0x7f0b0056;
+        public static final int list_sheet_view = 0x7f0b003d;
+        public static final int sheet_grid_item = 0x7f0b0050;
+        public static final int sheet_image_grid_item = 0x7f0b0051;
+        public static final int sheet_list_item = 0x7f0b0052;
+        public static final int sheet_list_item_separator = 0x7f0b0053;
+        public static final int sheet_list_item_subheader = 0x7f0b0054;
     }
 }

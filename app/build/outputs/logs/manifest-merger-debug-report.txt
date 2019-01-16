@@ -26,7 +26,7 @@ INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/A
 INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:2:1-106:12
 INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:2:1-106:12
 	package
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:3:5-44
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -63,14 +63,14 @@ ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/Andr
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:15:9-40
-activity#com.example.developement.app1.Login.LoginActivity
+activity#com.angelicaflores.eap.Login.LoginActivity
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:16:9-25:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:19:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:18:13-45
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:17:13-48
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:17:13-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
@@ -81,138 +81,138 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:23:27-74
-activity#com.example.developement.app1.menuElegirEjercicio.ElegirEjercicioActivity
+activity#com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:26:9-30:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:29:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:28:13-65
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:27:13-72
-activity#com.example.developement.app1.A_Cancelacion.SeleccionarLetrasActivity
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:27:13-94
+activity#com.angelicaflores.eap.A_Cancelacion.CancelacionActivity
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:31:9-35:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:34:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:33:13-52
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:32:13-68
-activity#com.example.developement.app1.C_CPTP.Juego_CPTP
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:32:13-84
+activity#com.angelicaflores.eap.C_CPTP.Juego_CPTP
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:36:9-40:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:39:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:38:13-65
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:37:13-46
-activity#com.example.developement.app1.C_CPTP.Demo_CPTP
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:37:13-68
+activity#com.angelicaflores.eap.C_CPTP.Demo_CPTP
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:41:9-45:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:44:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:42:13-45
-activity#com.example.developement.app1.C_CPTP.Instr_CPTP
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:42:13-67
+activity#com.angelicaflores.eap.C_CPTP.Instr_CPTP
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:46:9-50:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:49:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:48:13-86
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:47:13-46
-activity#com.example.developement.app1.D_Flanker.Instr_Flanker
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:47:13-68
+activity#com.angelicaflores.eap.D_Flanker.Instr_Flanker
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:51:9-53:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:52:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:51:19-58
-activity#com.example.developement.app1.D_Flanker.Demo_Flanker
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:51:19-80
+activity#com.angelicaflores.eap.D_Flanker.Demo_Flanker
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:54:9-56:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:55:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:54:19-57
-activity#com.example.developement.app1.D_Flanker.Juego_Flanker
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:54:19-79
+activity#com.angelicaflores.eap.D_Flanker.Juego_Flanker
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:57:9-59:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:58:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:57:19-58
-activity#com.example.developement.app1.E_ClavesCentrales.Demo_Claves
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:57:19-80
+activity#com.angelicaflores.eap.E_ClavesCentrales.Demo_Claves
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:60:9-62:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:61:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:60:19-64
-activity#com.example.developement.app1.E_ClavesCentrales.Juego_Claves
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:60:19-86
+activity#com.angelicaflores.eap.E_ClavesCentrales.Juego_Claves
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:63:9-65:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:64:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:63:19-65
-activity#com.example.developement.app1.E_ClavesCentrales.Instr_Claves
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:63:19-87
+activity#com.angelicaflores.eap.E_ClavesCentrales.Instr_Claves
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:66:9-68:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:67:13-50
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:66:19-65
-activity#com.example.developement.app1.B_Corsi.Instr_Corsi
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:66:19-87
+activity#com.angelicaflores.eap.B_Corsi.Instr_Corsi
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:69:9-73:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:72:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:71:13-70
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:70:13-48
-activity#com.example.developement.app1.B_Corsi.Demo_Corsi
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:70:13-70
+activity#com.angelicaflores.eap.B_Corsi.Demo_Corsi
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:74:9-78:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:77:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:76:13-62
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:75:13-47
-activity#com.example.developement.app1.B_Corsi.Juego_Corsi
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:75:13-69
+activity#com.angelicaflores.eap.B_Corsi.Juego_Corsi
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:79:9-83:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:82:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:81:13-66
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:80:13-48
-activity#com.example.developement.app1.F_RedesAtencionales.Instr_Redes
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:80:13-70
+activity#com.angelicaflores.eap.F_RedesAtencionales.Instr_Redes
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:84:9-88:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:87:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:86:13-74
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:85:13-60
-activity#com.example.developement.app1.F_RedesAtencionales.Demo_Redes
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:85:13-82
+activity#com.angelicaflores.eap.F_RedesAtencionales.Demo_Redes
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:89:9-93:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:92:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:91:13-73
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:90:13-59
-activity#com.example.developement.app1.F_RedesAtencionales.Juego_Redes
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:90:13-81
+activity#com.angelicaflores.eap.F_RedesAtencionales.Juego_Redes
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:94:9-98:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:97:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:96:13-66
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:95:13-60
-activity#com.example.developement.app1.F_RedesAtencionales.Ident_Redes
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:95:13-82
+activity#com.angelicaflores.eap.F_RedesAtencionales.Ident_Redes
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:99:9-103:20
 	android:screenOrientation
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:102:13-50
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:101:13-66
 	android:name
-		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:100:13-60
+		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:100:13-82
 uses-sdk
 INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml

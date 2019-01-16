@@ -170,7 +170,7 @@ public class ElegirEjercicioFragment extends android.support.v4.app.Fragment {
     View.OnClickListener onClick =  new View.OnClickListener() {
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.salirBtn:
+                case R.id.logoutBtn:
 
                     // Return to login since all data is stored on db
                     SharedPreferences.Editor editor = prefs.edit();
