@@ -14,7 +14,7 @@ import com.angelicaflores.eap.C_CPTP.InstrCPTPActivity;
 import com.angelicaflores.eap.B_Corsi.InstrCorsiActivity;
 import com.angelicaflores.eap.D_Flanker.InstrFlankerActivity;
 import com.angelicaflores.eap.E_ClavesCentrales.InstrClavesActivity;
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.A_Cancelacion.CancelacionActivity;
 import com.angelicaflores.eap.F_RedesAtencionales.InstrRedesActivity;
 

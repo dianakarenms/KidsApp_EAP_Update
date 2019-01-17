@@ -8,13 +8,13 @@
     <RelativeLayout
         android:id="@+id/titleTxt"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="#e5e5e1"
         android:layout_alignParentTop="true">
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:id="@+id/imageView3"
             app:srcCompat="@drawable/trianguloverde"
@@ -47,18 +47,16 @@
             android:stretchMode="columnWidth"
             android:gravity="center_vertical"
             android:layout_gravity="center"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:horizontalSpacing="10dp"
             android:verticalSpacing="0dp"/>
 
     </LinearLayout>
 
-
-
     <Button
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:text="Finalizar"
         android:id="@+id/finalizarBtn"
         android:layout_alignParentBottom="true"
@@ -66,7 +64,7 @@
         android:layout_alignParentEnd="true"
         android:background="#e5e5e1"
         android:textColor="#671fb2"
-        android:textSize="35dp" />
+        android:textSize="15dp" />
 
     <WebView
         android:layout_width="match_parent"

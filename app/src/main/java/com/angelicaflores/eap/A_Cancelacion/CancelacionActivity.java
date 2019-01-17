@@ -17,9 +17,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.angelicaflores.eap.app1.R;
-import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
+import com.angelicaflores.Utils.Constants;
 import com.angelicaflores.Utils.storeDataInLocalTxt;
+import com.angelicaflores.eap.R;
+import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,8 @@ public class CancelacionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = this;
+
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
             //exerciseId = extras.getString("exerciseId"); //if it's a string you stored.
@@ -86,10 +89,9 @@ public class CancelacionActivity extends AppCompatActivity {
 
         instrucciones();
 
-        context = this;
 
         prefs = this.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("exerciseId", exerciseId);
@@ -106,8 +108,8 @@ public class CancelacionActivity extends AppCompatActivity {
                 context.startActivity(i);
                 finish();
 
-                storeDataInLocalTxt store = new storeDataInLocalTxt();
-                store.saveData(userData.toString(), context);
+                storeDataInLocalTxt store = new storeDataInLocalTxt(this);
+                store.saveData(userData.toString());
             } else {
                 Intent i = new Intent(CancelacionActivity.this, ElegirEjercicioActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -207,8 +209,8 @@ public class CancelacionActivity extends AppCompatActivity {
             context.startActivity(i);
             finish();
 
-            storeDataInLocalTxt store = new storeDataInLocalTxt();
-            store.saveData(userData.toString(), context);
+            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+            store.saveData(userData.toString());
         }
     };
 

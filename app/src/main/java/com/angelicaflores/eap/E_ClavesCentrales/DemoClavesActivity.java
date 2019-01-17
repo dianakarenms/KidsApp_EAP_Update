@@ -12,7 +12,7 @@ import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 
 import java.util.ArrayList;
 import java.util.Timer;

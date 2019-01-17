@@ -30,8 +30,9 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.angelicaflores.Utils.Constants;
 import com.angelicaflores.eap.Login.LoginActivity;
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 
 import java.util.ArrayList;
 
@@ -86,7 +87,7 @@ public class ElegirEjercicioFragment extends android.support.v4.app.Fragment {
         list = (ArrayList<ElegirEjercicioObject>)  getArguments().getSerializable("list");
 
         prefs = getActivity().getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         if(prefs.getString("userId", "") != "")
             usrId = prefs.getString("userId", "");

@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

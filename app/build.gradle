@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.example.developement.app1"
+        applicationId "com.angelicaflores.eap"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1

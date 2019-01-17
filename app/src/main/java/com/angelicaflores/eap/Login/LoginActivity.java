@@ -15,8 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.angelicaflores.Utils.ConnectionTest;
+import com.angelicaflores.Utils.Constants;
 import com.angelicaflores.Utils.JSONParser;
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.Utils.ResultsListener;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioObject;
@@ -79,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         usuarioField.setTypeface(TF, Typeface.BOLD);
 
         prefs = this.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         if(prefs.getString("userId", "") != ""){
             Intent i = new Intent(LoginActivity.this, ElegirEjercicioActivity.class);

@@ -15,8 +15,9 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.angelicaflores.Utils.ConnectionTest;
+import com.angelicaflores.Utils.Constants;
 import com.angelicaflores.Utils.JSONParser;
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.Utils.ResultsListener;
 
 import org.apache.http.NameValuePair;
@@ -134,7 +135,7 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
         list = new ArrayList<ElegirEjercicioObject>();
 
         prefs = this.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         noConnectionExecution();
 

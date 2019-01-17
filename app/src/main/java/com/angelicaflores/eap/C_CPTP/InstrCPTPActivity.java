@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 
 
 public class InstrCPTPActivity extends AppCompatActivity implements View.OnClickListener

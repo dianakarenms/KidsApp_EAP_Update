@@ -10,21 +10,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 
 import org.jibble.simpleftp.SimpleFTP;
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,18 +31,20 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by DEVELOPEMENT on 26/08/2015.
  */
 public final class storeDataInLocalTxt {
 
-    public static ConnectionTest conntask;
-    public static ResultsListener listener;
+    private ConnectionTest conntask;
+    private ResultsListener listener;
     private ProgressDialog pDialog;
-    public static Context context;
-    public static JSONArray jsonArray;
-    public static String usrId, exId;
-    private static String ret="";
+    private Context context;
+    private JSONArray jsonArray;
+    private String usrId, exId;
+    private String ret="";
 
     // Shared Preferences
     SharedPreferences prefs;
@@ -55,19 +54,20 @@ public final class storeDataInLocalTxt {
     Boolean exitSave;
     //String statusTxt;
 
-    public storeDataInLocalTxt(){}
-
-    public void saveData(String data, Context context){
+    public storeDataInLocalTxt(Context context){
         this.context = context;
-        prefs = context.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+    }
 
-        if(prefs.getString("userId", "") != "") {
+    public void saveData(String data){
+        prefs = context.getSharedPreferences(Constants.prefsName, MODE_PRIVATE);
+
+        if(!prefs.getString("userId", "").isEmpty()) {
             usrId = prefs.getString("userId", "");
             exId = prefs.getString("exerciseId", "");
         }
 
-        try {
+        writeFileExternalStorage(data);
+        /*try {
             File myFile = new File("/sdcard/");
 
             File file[] = myFile.listFiles();
@@ -154,13 +154,51 @@ public final class storeDataInLocalTxt {
             Toast.makeText(context,
                     "Guardado Exitoso",
                     Toast.LENGTH_SHORT).show();
-            /*Intent i = new Intent(context, ElegirEjercicioActivity.class);
-            context.startActivity(i);*/
+
         } catch (Exception e) {
             Toast.makeText(context, e.getMessage(),
                     Toast.LENGTH_SHORT).show();
+        }*/
+
+    }
+
+    public void writeFileExternalStorage(String data) {
+
+        //Checking the availability state of the External Storage.
+        String state = Environment.getExternalStorageState();
+        if (!Environment.MEDIA_MOUNTED.equals(state)) {
+
+            //If it isn't mounted - we can't write into it.
+            return;
         }
 
+        //Create a new file that points to the root directory, with the given name:
+        final File dir = new File(context.getExternalFilesDir(null), "EAPdata/");
+        if(!dir.exists()) {
+            if(!dir.mkdirs()) {
+                Log.e("ALERT", "could not create directories");
+            }
+        }
+
+        final File file = new File(dir,  "1" + "ResultadosTablet_" + usrId + "_Ex" + exId + ".txt");
+
+        //This point and below is responsible for the write operation
+        FileOutputStream outputStream;
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            //second argument of FileOutputStream constructor indicates whether
+            //to append or create new file if one exists
+            outputStream = new FileOutputStream(file, true);
+
+            outputStream.write(data.getBytes());
+            outputStream.flush();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String convertStreamToString(InputStream is) throws Exception {

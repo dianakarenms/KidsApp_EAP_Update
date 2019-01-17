@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 import com.angelicaflores.Utils.storeDataInLocalTxt;
 
@@ -81,7 +82,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
         }
 
         SharedPreferences prefs = this.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("exerciseId", exerciseId);
@@ -116,8 +117,8 @@ public class JuegoCorsiActivity extends AppCompatActivity
             context.startActivity(i);
             finish();
 
-            storeDataInLocalTxt store = new storeDataInLocalTxt();
-            store.saveData(list.toString(), context);
+            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+            store.saveData(list.toString());
         }
     }
 
@@ -254,8 +255,8 @@ public class JuegoCorsiActivity extends AppCompatActivity
             context.startActivity(i);
             finish();
 
-            storeDataInLocalTxt store = new storeDataInLocalTxt();
-            store.saveData(list.toString(), context);
+            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+            store.saveData(list.toString());
         }
     };
 

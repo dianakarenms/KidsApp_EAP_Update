@@ -17,7 +17,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 import com.angelicaflores.Utils.storeDataInLocalTxt;
 
@@ -145,7 +146,7 @@ public class JuegoClavesActivity extends AppCompatActivity {
         //abucheo = MediaPlayer.create(this,R.raw.abucheo);
 
         SharedPreferences prefs = this.getSharedPreferences(
-                "com.example.app", Context.MODE_PRIVATE);
+                Constants.prefsName, Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("exerciseId", exerciseId);
@@ -194,8 +195,8 @@ public class JuegoClavesActivity extends AppCompatActivity {
             context.startActivity(i);
             finish();
 
-            storeDataInLocalTxt store = new storeDataInLocalTxt();
-            store.saveData(list.toString(), context);
+            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+            store.saveData(list.toString());
         }
 
     }
@@ -400,8 +401,8 @@ public class JuegoClavesActivity extends AppCompatActivity {
             context.startActivity(i);
             finish();
 
-            storeDataInLocalTxt store = new storeDataInLocalTxt();
-            store.saveData(list.toString(), context);
+            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+            store.saveData(list.toString());
         }
     };
 }

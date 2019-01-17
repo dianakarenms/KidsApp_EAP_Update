@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.angelicaflores.eap.app1.R;
+import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
 public class InstrCorsiActivity extends AppCompatActivity implements View.OnClickListener
