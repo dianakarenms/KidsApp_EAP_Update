@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flipboard.bottomsheet.BottomSheetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/portada" >
+
+        <EditText
+            android:id="@+id/usuarioEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/space"
+            android:hint="Usuario"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:background="#5fc100"
+            android:textSize="35dp"
+            android:gravity="center" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/nextBtn" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/nextBtn"
+            android:text="Iniciar"
+            android:background="#f95319"
+            android:layout_alignParentBottom="true"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:gravity="center" />
+
+    </RelativeLayout>
+</com.flipboard.bottomsheet.BottomSheetLayout>

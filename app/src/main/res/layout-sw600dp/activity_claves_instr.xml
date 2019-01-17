@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="wrap_content"
+android:layout_height="match_parent"
+android:descendantFocusability="blocksDescendants"
+android:background="@drawable/fondoinstrucciones">
+
+<!-- Title Text -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#f95319"
+    android:text="Instrucciones"
+    android:id="@+id/titleTxt"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:textColor="#fff"
+    android:textSize="35dp"
+    android:gravity="center"/>
+
+<!-- Central instructions -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_below="@+id/titleTxt"
+    android:weightSum="5">
+
+    <!-- Instructions TEXT -->
+    <LinearLayout
+        android:id="@+id/instrLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="5"
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Observa la flecha y presiona el lado de la pantalla donde se encuentra el dibujo. Mantén tu mirada en el centro."
+            android:id="@+id/instrTxt"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:layout_centerInParent="true"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+<!-- Botton buttons -->
+<LinearLayout
+    android:id="@+id/bottomLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="15"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true">
+
+    <ImageButton
+        android:id="@+id/btnDemo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        app:srcCompat="@drawable/btnnaranja35"
+        android:background="@null"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:paddingTop="40dp"
+        android:paddingRight="40dp"
+        android:text="Práctica"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        />
+
+    <ImageButton
+        android:id="@+id/btnJugar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        app:srcCompat="@drawable/btnnaranja36"
+        android:background="@null"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:paddingTop="40dp"
+        android:paddingLeft="40dp"
+        android:text="¡A jugar!"/>
+
+</LinearLayout>
+
+<!-- Bottom buttons text -->
+
+<TextView
+    android:id="@+id/practiceTxt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentBottom="true"
+    android:textColor="#fff"
+    android:textSize="25dp"
+    android:layout_marginBottom="40dp"
+    android:paddingLeft="35dp"
+    android:text="Práctica"/>
+
+<TextView
+    android:id="@+id/playTxt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:textColor="#fff"
+    android:textSize="25dp"
+    android:layout_marginBottom="40dp"
+    android:paddingRight="35dp"
+    android:text="¡A jugar!" />
+
+
+</RelativeLayout>
+

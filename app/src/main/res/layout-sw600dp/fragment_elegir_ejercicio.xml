@@ -7,7 +7,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:background="#f95319"
         android:text="Menú Principal"
         android:id="@+id/titleTxt"
@@ -48,13 +48,13 @@
 
     <Button
         android:id="@+id/logoutBtn"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
         android:text="Salir"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/botonsalirliso"
         android:textColor="#fff"
-        android:textSize="20dp"/>
+        android:textSize="35dp"/>
 
 </RelativeLayout>
