@@ -14,36 +14,30 @@ import android.widget.ViewSwitcher;
 import com.angelicaflores.eap.app1.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Demo_Redes extends AppCompatActivity {
+public class IdentRedesActivity extends AppCompatActivity {
 
     Button BtnIzquierdo,BtnDerecho;
+    ImageView manoDer, manoIzq;
     ImageSwitcher imageSwitcher;
     //MediaPlayer abucheo, aplauso;
 
     private int[] gallery = {
-            R.drawable.puntocentral,R.drawable.central, 2,R.drawable.arribaizquierdos,
-            R.drawable.puntocentral,R.drawable.central, 2,R.drawable.abajoizquierdo,
-            R.drawable.puntocentral,R.drawable.doble, 2,R.drawable.abajoderechos,
-            R.drawable.puntocentral,R.drawable.doble, 2,R.drawable.arribaizquierdo,
-            R.drawable.puntocentral,R.drawable.abajo, 2,R.drawable.abajoizquierdos,
-            R.drawable.puntocentral,R.drawable.vacio, 2,R.drawable.abajoderecho,
-            R.drawable.puntocentral,R.drawable.vacio, 2,R.drawable.arribaderecho,
-            R.drawable.puntocentral,R.drawable.arriba, 2,R.drawable.arribaderechos,R.drawable.fondoblanco};
+            2,R.drawable.arribaizquierdos,R.drawable.arribaizquierdoscirc,R.drawable.arribaizquierdoscirc,
+            2,R.drawable.arribaizquierdo,R.drawable.arribaizquierdocirc,R.drawable.arribaizquierdocirc,
+            2,R.drawable.abajoderechos,R.drawable.abajoderechoscirc,R.drawable.abajoderechoscirc,
+            2,R.drawable.abajoderecho,R.drawable.abajoderechocirc,R.drawable.abajoderechocirc,R.drawable.fondoblanco};
     private int position = 1;
     private Timer timer = null;
 
     //starTimer variables
-    long startTime;
+    long startTime, ellapsedTime;
     long estimatedTime;
-    ArrayList<Integer> list = new ArrayList<Integer> ();
     int curTime; // Curtime init time
-    Boolean clickFlag = false; // bandera para determinar si se ya se dio la respuesta durante el tiempo de 5seg de estímulo
-    Boolean ranActive = true; //
+    Boolean clickFlag = false,  flag = false, ranActive = true;;
     int result = 0;
 
     @Override
@@ -59,11 +53,14 @@ public class Demo_Redes extends AppCompatActivity {
         BtnIzquierdo = (Button) findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
 
+        manoDer = (ImageView) findViewById(R.id.manoderimg);
+        manoIzq = (ImageView) findViewById(R.id.manoizqimg);
+
         imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                ImageView imageView = new ImageView(Demo_Redes.this);
+                ImageView imageView = new ImageView(IdentRedesActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;
@@ -72,6 +69,7 @@ public class Demo_Redes extends AppCompatActivity {
 
         curTime = (getRandom(0,24)*50)+400;
         startTimer();
+
     }
 
     View.OnClickListener onClick =  new View.OnClickListener() {
@@ -80,10 +78,10 @@ public class Demo_Redes extends AppCompatActivity {
                 case R.id.buttonD:
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
-                    if (position == 12 || position == 24 || position==28  || position==32) {
+                    if (position == 12 || position == 16) {
                         //aplauso.start();
                         result = 1;
-                    } else if (position == 4 || position == 8 || position==16 || position==20 ) {
+                    } else if (position == 4 || position == 8) {
                         //abucheo.start();
                         result = 0;
                     } else {
@@ -98,10 +96,10 @@ public class Demo_Redes extends AppCompatActivity {
                 case R.id.buttonI:
                     BtnDerecho.setClickable(false);
                     BtnIzquierdo.setClickable(false);
-                    if (position == 4 || position == 8 || position==16 || position==20 ) {
+                    if (position == 4 || position == 8) {
                         //aplauso.start();
                         result = 1;
-                    } else if (position == 12 || position == 24 || position==28  || position==32) {
+                    } else if (position == 12 || position == 16) {
                         //abucheo.start();
                         result = 0;
                     } else {
@@ -115,7 +113,7 @@ public class Demo_Redes extends AppCompatActivity {
 
                 case R.id.continuarBtn:
                     finish();
-                    Intent intentE = new Intent(Demo_Redes.this, ElegirEjercicioActivity.class);
+                    Intent intentE = new Intent(IdentRedesActivity.this, ElegirEjercicioActivity.class);
                     startActivity(intentE);
                     break;
             }
@@ -124,19 +122,22 @@ public class Demo_Redes extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        /*Intent i = new Intent(Demo_Redes.this, ElegirEjercicioActivity.class);
+        /*super.onBackPressed();
+        Intent i = new Intent(IdentRedesActivity.this, ElegirEjercicioActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);*/
 
-        position = 0;
+        position = 1;
         timer.cancel();
         finish();
     }
 
-    //asignacion del tiempo para la visualizacion de las imagenes
     public void startTimer() {
+        //asignacion del tiempo para la visualizacion de las imagenes
         imageSwitcher.setImageResource(gallery[0]);
+
+        BtnDerecho.setClickable(false);
+        BtnIzquierdo.setClickable(false);
 
         startTime = System.currentTimeMillis();
         timer = new Timer();
@@ -152,24 +153,27 @@ public class Demo_Redes extends AppCompatActivity {
                         public void run() {
                             // Asignacion de tiempos de muestreo
                             if (ranActive == true && clickFlag == false) {
-                                curTime = 150; // inicia cue types
+                                curTime = 1300; // inicia cue types
                                 ranActive = false;
-
-
-                            } else if(curTime == 150)
-                                curTime = 450; // inicia fijacion
-
-
-                            else if(curTime == 450) {
+                            } else if(curTime == 1300 && flag == false) {
+                                curTime = 1300; // inicia fijacion
+                                flag = true;
+                            } else if(curTime == 1300 && flag == true) {
+                                flag = false;
                                 curTime = 5000; // inicia estimulo
                                 BtnDerecho.setClickable(true);
                                 BtnIzquierdo.setClickable(true);
-
-
+                                startTime = System.currentTimeMillis();
+                                if(position == 3 || position == 7)
+                                    manoIzq.setVisibility(View.VISIBLE);
+                                else
+                                    manoDer.setVisibility(View.VISIBLE);
                             } else if (curTime == 5000 || clickFlag == true) {
                                 curTime = (getRandom(0,24)*50)+400; // inicia feedback
                                 clickFlag = false;
                                 ranActive = true;
+                                manoDer.setVisibility(View.INVISIBLE);
+                                manoIzq.setVisibility(View.INVISIBLE);
                             }
 
                             imageSwitcher.setImageResource(gallery[position]);
@@ -183,7 +187,7 @@ public class Demo_Redes extends AppCompatActivity {
                                 BtnIzquierdo.setEnabled(false);
                                 BtnDerecho.setEnabled(false);
                             }
-                            if (position == 33) {
+                            if (position == gallery.length) {
                                 timer.cancel();
                                 finish();
                             }
@@ -200,4 +204,5 @@ public class Demo_Redes extends AppCompatActivity {
             return from + new Random().nextInt(Math.abs(to - from));
         return from - new Random().nextInt(Math.abs(to - from));
     }
+
 }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Demo_Flanker extends AppCompatActivity {
+public class DemoFlankerActivity extends AppCompatActivity {
 
     ImageButton BtnDerecho;
     ImageButton BtnIzquierdo;
@@ -69,7 +69,7 @@ public class Demo_Flanker extends AppCompatActivity {
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                ImageView imageView = new ImageView(Demo_Flanker.this);
+                ImageView imageView = new ImageView(DemoFlankerActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;

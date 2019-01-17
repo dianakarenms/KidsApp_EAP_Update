@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.angelicaflores.eap.app1.R;
 
 
-public class Instr_Claves extends AppCompatActivity {
+public class InstrClavesActivity extends AppCompatActivity {
 
     TextView textview;
     Button BtnReproducir;
@@ -51,7 +51,7 @@ public class Instr_Claves extends AppCompatActivity {
 
             //@Override
             public void onClick(View v) {
-                Intent intent = new Intent(Instr_Claves.this, Demo_Claves.class);
+                Intent intent = new Intent(InstrClavesActivity.this, DemoClavesActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class Instr_Claves extends AppCompatActivity {
 
             //@Override
             public void onClick(View v) {
-                Intent intentE = new Intent(Instr_Claves.this, Juego_Claves.class);
+                Intent intentE = new Intent(InstrClavesActivity.this, JuegoClavesActivity.class);
                 intentE.putExtra("exerciseId", exerciseId);
                 startActivity(intentE);
             }

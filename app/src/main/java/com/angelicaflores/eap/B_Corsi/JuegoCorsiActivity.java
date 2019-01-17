@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Juego_Corsi extends AppCompatActivity
+public class JuegoCorsiActivity extends AppCompatActivity
 {
 
     Button ctrlBtn;

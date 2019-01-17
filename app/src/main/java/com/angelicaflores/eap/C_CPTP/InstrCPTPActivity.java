@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.angelicaflores.eap.app1.R;
 
 
-public class Instr_CPTP extends AppCompatActivity implements View.OnClickListener
+public class InstrCPTPActivity extends AppCompatActivity implements View.OnClickListener
 {
     TextToSpeech t1;
     ImageButton boton;
@@ -54,12 +54,12 @@ public class Instr_CPTP extends AppCompatActivity implements View.OnClickListene
         switch(v.getId())
         {
             case R.id.btnDemo:
-                Intent intent= new Intent(this, Demo_CPTP.class);
+                Intent intent= new Intent(this, DemoCPTPActivity.class);
                 intent.putExtra("exerciseId", exerciseId);
                         startActivity(intent);
                 break;
             case R.id.BTNjugar:
-                Intent btnnueve= new Intent(this, Juego_CPTP.class);
+                Intent btnnueve= new Intent(this, JuegoCPTPActivity.class);
                 btnnueve.putExtra("exerciseId", exerciseId);
                         startActivity(btnnueve);
                 break;

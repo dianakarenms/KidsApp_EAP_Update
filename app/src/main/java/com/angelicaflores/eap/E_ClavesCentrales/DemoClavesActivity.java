@@ -21,7 +21,7 @@ import java.util.TimerTask;
 /**
  * Created by GPS-003 on 28/07/2015.
  */
-public class Demo_Claves extends AppCompatActivity {
+public class DemoClavesActivity extends AppCompatActivity {
     Button BtnDerecho;
     Button BtnIzquierdo;
     TextToSpeech t1;
@@ -62,7 +62,7 @@ public class Demo_Claves extends AppCompatActivity {
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                ImageView imageView = new ImageView(Demo_Claves.this);
+                ImageView imageView = new ImageView(DemoClavesActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;

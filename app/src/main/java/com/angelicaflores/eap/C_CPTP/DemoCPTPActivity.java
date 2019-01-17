@@ -18,7 +18,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class Demo_CPTP extends AppCompatActivity {
+public class DemoCPTPActivity extends AppCompatActivity {
     int curTime = 2000;
 
     Timer timer;
@@ -87,7 +87,7 @@ public class Demo_CPTP extends AppCompatActivity {
         @Override
         public void onBackPressed() {
             super.onBackPressed();
-            Intent i = new Intent(Demo_CPTP.this, ElegirEjercicioActivity.class);
+            Intent i = new Intent(DemoCPTPActivity.this, ElegirEjercicioActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
 

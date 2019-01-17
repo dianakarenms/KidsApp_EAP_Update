@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.angelicaflores.eap.app1.R;
 
 
-public class Instr_Flanker extends AppCompatActivity {
+public class InstrFlankerActivity extends AppCompatActivity {
 
     TextView txt, instrTxt, practiceTxt, playTxt;
     ImageButton BtnPrueba, BtnEjercicios;
@@ -59,7 +59,7 @@ public class Instr_Flanker extends AppCompatActivity {
 
             //@Override
             public void onClick(View v) {
-                Intent intent = new Intent(Instr_Flanker.this, Demo_Flanker.class);
+                Intent intent = new Intent(InstrFlankerActivity.this, DemoFlankerActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class Instr_Flanker extends AppCompatActivity {
 
             //@Override
             public void onClick(View v) {
-                Intent intentE = new Intent(Instr_Flanker.this, Juego_Flanker.class);
+                Intent intentE = new Intent(InstrFlankerActivity.this, JuegoFlankerActivity.class);
                 intentE.putExtra("exerciseId", exerciseId);
                 startActivity(intentE);
             }

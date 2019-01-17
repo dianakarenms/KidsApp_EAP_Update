@@ -29,7 +29,7 @@ import java.util.TimerTask;
 /**
  * Created by GPS-003 on 28/07/2015.
  */
-public class Juego_Claves extends AppCompatActivity {
+public class JuegoClavesActivity extends AppCompatActivity {
 
     Button BtnDerecho;
     Button BtnIzquierdo;
@@ -173,7 +173,7 @@ public class Juego_Claves extends AppCompatActivity {
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                ImageView imageView = new ImageView(Juego_Claves.this);
+                ImageView imageView = new ImageView(JuegoClavesActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;
@@ -296,7 +296,7 @@ public class Juego_Claves extends AppCompatActivity {
                 case R.id.continuarBtn:
 
                     finish();
-                    Intent intentE = new Intent(Juego_Claves.this, ElegirEjercicioActivity.class);
+                    Intent intentE = new Intent(JuegoClavesActivity.this, ElegirEjercicioActivity.class);
                     startActivity(intentE);
                     break;
             }

@@ -27,7 +27,7 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Juego_Flanker extends AppCompatActivity {
+public class JuegoFlankerActivity extends AppCompatActivity {
 
     ImageButton BtnDerecho,BtnIzquierdo;
     TextToSpeech t1;
@@ -99,7 +99,7 @@ public class Juego_Flanker extends AppCompatActivity {
         imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             public View makeView() {
-                ImageView imageView = new ImageView(Juego_Flanker.this);
+                ImageView imageView = new ImageView(JuegoFlankerActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;
@@ -197,7 +197,7 @@ public class Juego_Flanker extends AppCompatActivity {
                 case R.id.button5:
 
                     finish();
-                    Intent intentE = new Intent(Juego_Flanker.this, ElegirEjercicioActivity.class);
+                    Intent intentE = new Intent(JuegoFlankerActivity.this, ElegirEjercicioActivity.class);
                     startActivity(intentE);
                     break;
             }

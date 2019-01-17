@@ -21,7 +21,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class Juego_CPTP extends AppCompatActivity {
+public class JuegoCPTPActivity extends AppCompatActivity {
     int curTime = 2000;
 
     Timer timer;
@@ -35,17 +35,21 @@ public class Juego_CPTP extends AppCompatActivity {
     final String exerciseId = "2";
     Context context;
 
-    //MediaPlayer abucheo, aplauso;
     WebView wv;
 
     private boolean endFlag;
     private  int[] figures = {
             R.drawable.puerco, R.drawable.mujer, R.drawable.paleta, R.drawable.sol, R.drawable.helado,R.drawable.flor};
     private int[] gallery = {
-        5,0,1,2,3,4, 1,5,4,0,2,3, 1,5,2,3,4,0, 5,3,1,0,2,4, 5,3,1,4,2,0,
-        2,4,3,0,1,5, 2,4,1,3,5,0, 5,0,3,1,4,2, 4,0,2,3,5,1, 0,3,5,1,4,2,
-        4,1,2,0,5,3, 2,5,4,3,0,1, 5,2,3,4,1,0, 1,4,0,3,5,2, 3,4,5,0,1,2,
-        1,0,3,4,2,5, 0,3,1,4,5,2, 1,2,5,0,4,3, 1,4,3,2,0,5, 2,0,3,5,1,4
+            5,0,1,2,3,4, 1,5,4,0,2,3, 1,5,2,3,4,0, 5,3,1,0,2,4, 5,3,1,4,2,0,
+            2,4,3,0,1,5, 2,4,1,3,5,0, 5,0,3,1,4,2, 4,0,2,3,5,1, 0,3,5,1,4,2,
+            4,1,2,0,5,3, 2,5,4,3,0,1, 5,2,3,4,1,0, 1,4,0,3,5,2, 3,4,5,0,1,2,
+            1,0,3,4,2,5, 0,3,1,4,5,2, 1,2,5,0,4,3, 1,4,3,2,0,5, 2,0,3,5,1,4,
+
+            5,0,1,2,3,4, 1,5,4,0,2,3, 1,5,2,3,4,0, 5,3,1,0,2,4, 5,3,1,4,2,0,
+            2,4,3,0,1,5, 2,4,1,3,5,0, 5,0,3,1,4,2, 4,0,2,3,5,1, 0,3,5,1,4,2,
+            4,1,2,0,5,3, 2,5,4,3,0,1, 5,2,3,4,1,0, 1,4,0,3,5,2, 3,4,5,0,1,2,
+            1,0,3,4,2,5, 0,3,1,4,5,2, 1,2,5,0,4,3, 1,4,3,2,0,5, 2,0,3,5,1,4
     };
 
     private int position = -1;
@@ -56,14 +60,11 @@ public class Juego_CPTP extends AppCompatActivity {
         setContentView(R.layout.activity_cptp_juego);
         context = this;
 
-        imageSwitcher = (ImageView) findViewById(R.id.imageSwitcher);
+        imageSwitcher = findViewById(R.id.imageSwitcher);
         imageSwitcher.setVisibility(View.INVISIBLE);
         imageSwitcher.setTag("0");
 
-        //aplauso = MediaPlayer.create(this, R.raw.aplauso);
-        //abucheo = MediaPlayer.create(this, R.raw.abucheo);
-
-        btn = (Button) findViewById(R.id.button2);
+        btn = findViewById(R.id.button2);
         btn.setOnClickListener(onClick);
 
         SharedPreferences prefs = this.getSharedPreferences(
@@ -72,11 +73,6 @@ public class Juego_CPTP extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("exerciseId", exerciseId);
         editor.commit();
-
-        /*Bundle extras = getIntent().getExtras();
-        if(extras != null)
-            exerciseId = extras.getString("exerciseId"); //if it's a string you stored.*/
-
         startTimer();
     }
 
@@ -138,10 +134,6 @@ public class Juego_CPTP extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         public void run() {
 
-                        /*totalTime = System.nanoTime() - startTime;
-                        double ellapsed = (double)totalTime / 1000000000.0;
-                        Log.d("TotalTime (ms) ", String.valueOf(ellapsed));*/
-
                             if (curTime == 2000 || curTime == 800) { //inicia feedback
                                 btn.setClickable(true);
                                 startTime = System.currentTimeMillis();
@@ -157,7 +149,6 @@ public class Juego_CPTP extends AppCompatActivity {
                                     else
                                         imageSwitcher.setTag("0");
                                     imageSwitcher.setVisibility(View.VISIBLE);
-                                    //startTime = System.currentTimeMillis();
                                     curTime = 750; // presentación de imagen
                                 }
                             } else {
@@ -171,7 +162,7 @@ public class Juego_CPTP extends AppCompatActivity {
                             if(position == gallery.length-1 && curTime == 2000){
                                 endFlag = true;
 
-                                wv = (WebView) findViewById(R.id.webView);
+                                wv = findViewById(R.id.webView);
 
                                 // mostrar gif de fuegos artificiales
                                 wv.setVisibility(View.VISIBLE);

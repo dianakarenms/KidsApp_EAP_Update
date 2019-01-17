@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.angelicaflores.eap.app1.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
-public class Instr_Corsi extends AppCompatActivity implements View.OnClickListener
+public class InstrCorsiActivity extends AppCompatActivity implements View.OnClickListener
 {
     TextToSpeech t1;
     ImageButton btnpracticardemo,btnpracticarjuego;
@@ -51,7 +51,7 @@ public class Instr_Corsi extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(Instr_Corsi.this, ElegirEjercicioActivity.class);
+        Intent i = new Intent(InstrCorsiActivity.this, ElegirEjercicioActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
         finish();
@@ -63,13 +63,13 @@ public class Instr_Corsi extends AppCompatActivity implements View.OnClickListen
         switch(v.getId())
         {
             case R.id.btnpractica:
-                Intent demo= new Intent(this,Demo_Corsi.class);
+                Intent demo= new Intent(this, DemoCorsiActivity.class);
                 demo.putExtra("exerciseId", exerciseId);
                         startActivity(demo);
                 finish();
                 break;
             case R.id.btnjugar:
-                Intent jugar= new Intent(this,Juego_Corsi.class);
+                Intent jugar= new Intent(this, JuegoCorsiActivity.class);
                 jugar.putExtra("exerciseId", exerciseId);
                 startActivity(jugar);
                 finish();

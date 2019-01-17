@@ -15,7 +15,7 @@ import com.angelicaflores.eap.app1.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Demo_Corsi extends AppCompatActivity
+public class DemoCorsiActivity extends AppCompatActivity
 {
 
     Button ctrlBtn;
@@ -63,7 +63,7 @@ public class Demo_Corsi extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(Demo_Corsi.this, Instr_Corsi.class);
+        Intent i = new Intent(DemoCorsiActivity.this, InstrCorsiActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
         finish();
@@ -88,7 +88,7 @@ public class Demo_Corsi extends AppCompatActivity
                 case R.id.ctrlBtn:
                     if(ctrlBtn.getText().equals("Finalizar")) {
                         finish();
-                        Intent intentE = new Intent(Demo_Corsi.this, Instr_Corsi.class);
+                        Intent intentE = new Intent(DemoCorsiActivity.this, InstrCorsiActivity.class);
                         startActivity(intentE);
                     } else {
                         ctrlBtn.setVisibility(View.INVISIBLE);

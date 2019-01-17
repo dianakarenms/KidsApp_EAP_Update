@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.angelicaflores.eap.C_CPTP.Instr_CPTP;
-import com.angelicaflores.eap.B_Corsi.Instr_Corsi;
-import com.angelicaflores.eap.D_Flanker.Instr_Flanker;
-import com.angelicaflores.eap.E_ClavesCentrales.Instr_Claves;
+import com.angelicaflores.eap.C_CPTP.InstrCPTPActivity;
+import com.angelicaflores.eap.B_Corsi.InstrCorsiActivity;
+import com.angelicaflores.eap.D_Flanker.InstrFlankerActivity;
+import com.angelicaflores.eap.E_ClavesCentrales.InstrClavesActivity;
 import com.angelicaflores.eap.app1.R;
 import com.angelicaflores.eap.A_Cancelacion.CancelacionActivity;
-import com.angelicaflores.eap.F_RedesAtencionales.Instr_Redes;
+import com.angelicaflores.eap.F_RedesAtencionales.InstrRedesActivity;
 
 import java.util.ArrayList;
 
@@ -120,19 +120,19 @@ public class ElegirEjercicioAdapter extends ArrayAdapter<ElegirEjercicioObject>
                         i.putExtra("tempData", "");
                         break;
                     case 2:
-                        i = new Intent(context, Instr_CPTP.class);
+                        i = new Intent(context, InstrCPTPActivity.class);
                         break;
                     case 3:
-                        i = new Intent(context, Instr_Flanker.class);
+                        i = new Intent(context, InstrFlankerActivity.class);
                         break;
                     case 4:
-                        i = new Intent(context, Instr_Claves.class);
+                        i = new Intent(context, InstrClavesActivity.class);
                         break;
                     case 5:
-                        i = new Intent(context, Instr_Corsi.class);
+                        i = new Intent(context, InstrCorsiActivity.class);
                         break;
                     case 6:
-                        i = new Intent(context, Instr_Redes.class);
+                        i = new Intent(context, InstrRedesActivity.class);
                         break;
                 }
 

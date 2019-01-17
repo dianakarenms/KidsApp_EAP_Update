@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.angelicaflores.eap.app1.R;
 
-public class Instr_Redes extends AppCompatActivity {
+public class InstrRedesActivity extends AppCompatActivity {
 
     TextView txt;
     ImageButton boton, playBtn;
@@ -38,7 +38,7 @@ public class Instr_Redes extends AppCompatActivity {
             switch (v.getId()) {
 
                 case R.id.btnDemo:
-                    Intent i = new Intent(Instr_Redes.this, Ident_Redes.class);
+                    Intent i = new Intent(InstrRedesActivity.this, IdentRedesActivity.class);
                     startActivity(i);
                     break;
 
@@ -47,13 +47,13 @@ public class Instr_Redes extends AppCompatActivity {
                         nextScreenFlag = true;
                         instrucciones();
                     } else if(continuarBtn.getText().equals("Practicar")){
-                        Intent i2 = new Intent(Instr_Redes.this, Demo_Redes.class);
+                        Intent i2 = new Intent(InstrRedesActivity.this, DemoRedesActivity.class);
                         startActivity(i2);
                     }
                     break;
 
                 case R.id.btnJugar:
-                    Intent i2 = new Intent(Instr_Redes.this, Juego_Redes.class);
+                    Intent i2 = new Intent(InstrRedesActivity.this, JuegoRedesActivity.class);
                     i2.putExtra("exerciseId", exerciseId);
                     startActivity(i2);
                     break;

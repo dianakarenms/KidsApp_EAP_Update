@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jan 16 16:03:54 CST 2019
+#Wed Jan 16 16:59:56 CST 2019
 2.base=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 5.set=DEX
 0.path=gifs/fuegos3.gif

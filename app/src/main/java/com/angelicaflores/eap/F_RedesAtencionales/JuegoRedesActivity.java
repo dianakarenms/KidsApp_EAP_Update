@@ -24,7 +24,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Juego_Redes extends AppCompatActivity {
+public class JuegoRedesActivity extends AppCompatActivity {
 
     Button BtnIzquierdo,BtnDerecho,BtnPausa;
     ImageSwitcher imageSwitcher;
@@ -219,7 +219,7 @@ public class Juego_Redes extends AppCompatActivity {
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                ImageView imageView = new ImageView(Juego_Redes.this);
+                ImageView imageView = new ImageView(JuegoRedesActivity.this);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT, AbsoluteLayout.LayoutParams.FILL_PARENT));
                 return imageView;

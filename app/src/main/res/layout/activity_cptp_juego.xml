@@ -4,7 +4,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    android:background="#F2F2E7"
+    android:background="#000"
     android:id="@+id/LayoudCerdito">
 
 <LinearLayout

@@ -1,4 +1,4 @@
-#Wed Jan 16 16:03:54 CST 2019
+#Thu Jan 17 10:18:34 CST 2019
 base.0=/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/dex/debug/mergeDexDebug/out
 path.0=classes.dex
 renamed.0=classes.dex
