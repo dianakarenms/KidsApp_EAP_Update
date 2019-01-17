@@ -99,12 +99,6 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                     btn.setClickable(false);
                     ellapsedTime = System.currentTimeMillis() - startTime;
 
-                    if (imageSwitcher.getTag() == "1") {
-                        //aplauso.start();
-                    } else if(imageSwitcher.getTag() == "0"){
-                        //abucheo.start();
-                    }
-
                     if(position != -1) {
                         int nCorrida = (int) Math.ceil((position + 1) / 6);
 
@@ -134,7 +128,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         public void run() {
 
-                            if (curTime == 2000 || curTime == 800) { //inicia feedback
+                            if (curTime == 800 /*|| curTime == 2000*/) { //inicia feedback
                                 btn.setClickable(true);
                                 startTime = System.currentTimeMillis();
                                 if (position < gallery.length-1) {
@@ -152,22 +146,24 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                                     curTime = 750; // presentación de imagen
                                 }
                             } else {
-                                imageSwitcher.setVisibility(View.INVISIBLE);
+                                // Time between stimulus
+                                imageSwitcher.setImageResource(R.drawable.cruz_blanca);
+                                curTime = 800;
+                                /*imageSwitcher.setVisibility(View.INVISIBLE);
                                 if ((position + 1) % 6 == 0)
                                     curTime = 2000;
                                 else
-                                    curTime = 800;
+                                    curTime = 800;*/
                             }
 
-                            if(position == gallery.length-1 && curTime == 2000){
+                            // End of exercise
+                            if(position == gallery.length-1 && curTime == 800){
                                 endFlag = true;
-
                                 wv = findViewById(R.id.webView);
-
                                 // mostrar gif de fuegos artificiales
                                 wv.setVisibility(View.VISIBLE);
                                 wv.loadUrl("file:///android_asset/gifs/index.html");
-                                // esperar 300ms antes de comenzar el guardado de datos, para dar tiempo al gif de mostrarse
+                                // esperar 3000ms antes de comenzar el guardado de datos, para dar tiempo al gif de mostrarse
                                 Handler handler = new Handler();
                                 handler.postDelayed(runnable, 3000);
 
