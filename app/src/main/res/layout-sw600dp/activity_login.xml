@@ -18,7 +18,7 @@
             android:textColorHint="#fff"
             android:textColor="#fff"
             android:background="#5fc100"
-            android:textSize="35dp"
+            android:textSize="35sp"
             android:gravity="center" />
 
         <Space

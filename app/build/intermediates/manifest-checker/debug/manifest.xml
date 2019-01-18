@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.developement.app1"
+    package="com.angelicaflores.eap"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -11,6 +11,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- preferExt -->
@@ -22,7 +23,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.developement.app1.Login.LoginActivity"
+            android:name="com.angelicaflores.eap.Login.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
             <intent-filter>
@@ -32,93 +33,93 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.developement.app1.menuElegirEjercicio.ElegirEjercicioActivity"
+            android:name="com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity"
             android:label="@string/title_activity_comenzarjuego"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.A_Cancelacion.SeleccionarLetrasActivity"
+            android:name="com.angelicaflores.eap.A_Cancelacion.CancelacionActivity"
             android:label="Selecciona un Ejercicio"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.C_CPT.Juego_CPT"
+            android:name="com.angelicaflores.eap.C_CPTP.JuegoCPTPActivity"
             android:label="@string/title_activity_comenzarjuego"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.C_CPT.Demo_CPT"
+            android:name="com.angelicaflores.eap.C_CPTP.DemoCPTPActivity"
             android:label="@string/title_activity_demo"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.C_CPT.Instr_CPT"
+            android:name="com.angelicaflores.eap.C_CPTP.InstrCPTPActivity"
             android:label="@string/title_activity_main2_activitymenuprincipalcerdito"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.D_Flanker.Instr_Flanker"
+            android:name="com.angelicaflores.eap.D_Flanker.InstrFlankerActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.D_Flanker.Demo_Flanker"
+            android:name="com.angelicaflores.eap.D_Flanker.DemoFlankerActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.D_Flanker.Juego_Flanker"
+            android:name="com.angelicaflores.eap.D_Flanker.JuegoFlankerActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.E_ClavesCentrales.Demo_Claves"
+            android:name="com.angelicaflores.eap.E_ClavesCentrales.DemoClavesActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.E_ClavesCentrales.Juego_Claves"
+            android:name="com.angelicaflores.eap.E_ClavesCentrales.JuegoClavesActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.E_ClavesCentrales.Instr_Claves"
+            android:name="com.angelicaflores.eap.E_ClavesCentrales.InstrClavesActivity"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.B_Corsi.Instr_Corsi"
+            android:name="com.angelicaflores.eap.B_Corsi.InstrCorsiActivity"
             android:label="@string/title_activity_cubo_activity_main"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.B_Corsi.Demo_Corsi"
+            android:name="com.angelicaflores.eap.B_Corsi.DemoCorsiActivity"
             android:label="@string/title_activity_demo__cubo"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.B_Corsi.Juego_Corsi"
+            android:name="com.angelicaflores.eap.B_Corsi.JuegoCorsiActivity"
             android:label="@string/title_activity_comenzar__cubo"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.F_RedesAtencionales.Instr_Redes"
+            android:name="com.angelicaflores.eap.F_RedesAtencionales.InstrRedesActivity"
             android:label="@string/title_activity_pescado__activity_main"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.F_RedesAtencionales.Demo_Redes"
+            android:name="com.angelicaflores.eap.F_RedesAtencionales.DemoRedesActivity"
             android:label="@string/title_activity_pescado__presentacion"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.F_RedesAtencionales.Juego_Redes"
+            android:name="com.angelicaflores.eap.F_RedesAtencionales.JuegoRedesActivity"
             android:label="@string/title_activity_pescado__juego"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.developement.app1.F_RedesAtencionales.Ident_Redes"
+            android:name="com.angelicaflores.eap.F_RedesAtencionales.IdentRedesActivity"
             android:label="@string/title_activity_pescado__juego"
             android:screenOrientation="landscape" >
         </activity>
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="com.example.developement.app1.com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.angelicaflores.eap.com.android.tools.ir.server.InstantRunContentProvider"
             android:multiprocess="true" />
     </application>
 

@@ -19,7 +19,7 @@ import java.util.TimerTask;
 
 
 public class DemoCPTPActivity extends AppCompatActivity {
-    int curTime = 2000;
+    int curTime = 800;
 
     Timer timer;
     Boolean active = false;
@@ -29,21 +29,17 @@ public class DemoCPTPActivity extends AppCompatActivity {
     ArrayList<Integer> list = new ArrayList<Integer> ();
 
     private ImageView imageSwitcher;
-    Button BtnTerminar, btnMostrar, btnFin;
+    Button btnMostrar;
     String exerciseId;
     Context context;
 
-    RelativeLayout LayoudPrincipal;
-    //MediaPlayer abucheo, aplauso;
-
     private  int[] figures = {
-            R.drawable.puerco, R.drawable.mujer, R.drawable.paleta, R.drawable.sol, R.drawable.helado,R.drawable.flor};
+            R.drawable.puerco, R.drawable.mujer, R.drawable.paleta, R.drawable.sol, R.drawable.helado, R.drawable.flor};
     private int[] gallery = {
             5,0,1,2,3,4, 1,5,4,0,2,3
     };
 
-    private int position = 0;
-    boolean firstFlag = true;
+    private int position = -1;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -51,21 +47,18 @@ public class DemoCPTPActivity extends AppCompatActivity {
             setContentView(R.layout.activity_cptp_juego);
             context = this;
 
-            imageSwitcher = (ImageView) findViewById(R.id.imageSwitcher);
+            imageSwitcher = findViewById(R.id.imageSwitcher);
             imageSwitcher.setVisibility(View.INVISIBLE);
             imageSwitcher.setTag("0");
 
-            //aplauso = MediaPlayer.create(this, R.raw.aplauso);
-            //abucheo = MediaPlayer.create(this, R.raw.abucheo);
-
-            btnMostrar = (Button) findViewById(R.id.button2);
+            btnMostrar = findViewById(R.id.button2);
 
             btnMostrar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     btnMostrar.setClickable(false);
 
-                    if (imageSwitcher.getTag() == "1") {
+                    /*if (imageSwitcher.getTag() == "1") {
                         //aplauso.start();
                         list.add(gallery[position]);
                     } else if(imageSwitcher.getTag() == "0"){
@@ -73,7 +66,7 @@ public class DemoCPTPActivity extends AppCompatActivity {
                         list.add(gallery[position]);
                     }
 
-                    list.add((int) ellapsedTime);
+                    list.add((int) ellapsedTime);*/
                 }
             });
 
@@ -108,15 +101,10 @@ public class DemoCPTPActivity extends AppCompatActivity {
                         Log.d("ellapsed", String.valueOf(estimatedTime));
                         estimatedTime = 0;
 
-
                         runOnUiThread(new Runnable() {
                             public void run() {
 
-                        /*totalTime = System.nanoTime() - startTime;
-                        double ellapsed = (double)totalTime / 1000000000.0;
-                        Log.d("TotalTime (ms) ", String.valueOf(ellapsed));*/
-
-                                if (curTime == 2000 || curTime == 500) {
+                                if (curTime == 800) {
                                     btnMostrar.setClickable(true);
                                     startTime = System.currentTimeMillis();
                                     if (position < gallery.length-1) {
@@ -131,18 +119,20 @@ public class DemoCPTPActivity extends AppCompatActivity {
                                         else
                                             imageSwitcher.setTag("0");
                                         imageSwitcher.setVisibility(View.VISIBLE);
-                                        //startTime = System.currentTimeMillis();
                                         curTime = 750;
                                     }
                                 } else {
-                                    imageSwitcher.setVisibility(View.INVISIBLE);
+                                    // Time between stimulus
+                                    imageSwitcher.setImageResource(R.drawable.cruz_blanca);
+                                    curTime = 800;
+                                    /*imageSwitcher.setVisibility(View.INVISIBLE);
                                     if ((position + 1) % 6 == 0)
                                         curTime = 2000;
                                     else
-                                        curTime = 500;
+                                        curTime = 500;*/
                                 }
 
-                                if(position == gallery.length-1 && curTime == 2000){
+                                if(position == gallery.length-1 && curTime == 800){
                                     cancel();
                                     position = 0;
                                     finish();

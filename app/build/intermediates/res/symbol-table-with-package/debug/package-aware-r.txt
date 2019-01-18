@@ -1,4 +1,4 @@
-com.example.developement.app1
+com.angelicaflores.eap
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -765,6 +765,7 @@ drawable clavescruz
 drawable cloudicon
 drawable comenzar
 drawable correct
+drawable cruz_blanca
 drawable cuboamarillo01
 drawable cuboazul01
 drawable dabeja
@@ -911,7 +912,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1087,7 +1087,6 @@ id start
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
-id synch
 id tabMode
 id tag_transition_group
 id text
@@ -1114,7 +1113,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id uniform
 id up
-id upload
 id useLogo
 id usuarioEdit
 id view_offset_helper
@@ -1218,18 +1216,6 @@ layout sheet_list_item
 layout sheet_list_item_separator
 layout sheet_list_item_subheader
 layout support_simple_spinner_dropdown_item
-menu create
-menu menu_comenzar__cubo
-menu menu_comenzarjuego
-menu menu_cubo_activity_main
-menu menu_demo
-menu menu_demo__cubo
-menu menu_main
-menu menu_main2_activitymenuprincipalcerdito
-menu menu_pescado__activity_main
-menu menu_pescado__demo
-menu menu_pescado__juego
-menu menu_pescado__presentacion
 mipmap ic_launcher
 raw abucheo
 raw aplauso
@@ -1268,6 +1254,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_pattern
+string cptp_instr_title
 string hello_world
 string lorem_ipsum
 string password_toggle_content_description

@@ -180,7 +180,7 @@ public final class storeDataInLocalTxt {
             }
         }
 
-        final File file = new File(dir,  "1" + "ResultadosTablet_" + usrId + "_Ex" + exId + ".txt");
+        final File file = new File(dir,  usrId + "_Ex" + exId + ".txt");
 
         //This point and below is responsible for the write operation
         FileOutputStream outputStream;

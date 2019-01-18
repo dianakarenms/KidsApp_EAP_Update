@@ -23,7 +23,7 @@ import java.util.TimerTask;
 
 
 public class JuegoCPTPActivity extends AppCompatActivity {
-    int curTime = 2000;
+    int curTime = 800;
 
     Timer timer;
 
@@ -124,7 +124,6 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                 if (estimatedTime == curTime) {
                     Log.d("ellapsed", String.valueOf(estimatedTime));
                     estimatedTime = 0;
-
 
                     runOnUiThread(new Runnable() {
                         public void run() {
