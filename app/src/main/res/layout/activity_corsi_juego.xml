@@ -9,15 +9,15 @@
     <RelativeLayout
         android:id="@+id/titleTxt"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="#e5e5e1"
         android:layout_alignParentTop="true">
 
         <ImageButton
             android:id="@+id/imgsemaforo"
             app:srcCompat="@drawable/paloma"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@null"
             android:visibility="invisible"
             android:layout_alignParentRight="true"
@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="900dp"
+        android:layout_width="486dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/titleTxt"
         android:layout_above="@+id/ctrlBtn"
@@ -37,85 +37,85 @@
 
         <ImageButton
             android:id="@+id/cubo1"
-            android:layout_height="130dp"
-            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:layout_width="70dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="195dp"
+            android:layout_marginLeft="105dp"
             android:background="@drawable/azul"
             android:tag="1"/>
 
 
         <ImageButton
             android:id="@+id/cubo2"
-            android:layout_height="130dp"
-            android:layout_width="130dp"
-            android:layout_marginRight="178dp"
-            android:layout_marginEnd="178dp"
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:layout_marginRight="96dp"
+            android:layout_marginEnd="96dp"
             android:background="@drawable/azul"
             android:tag="2" />
 
         <ImageButton
             android:id="@+id/cubo3"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="700dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="378dp"
+            android:layout_marginTop="54dp"
             android:background="@drawable/azul"
             android:tag="3" />
 
         <ImageButton
             android:id="@+id/cubo4"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginTop="81dp"
+            android:layout_marginLeft="65dp"
             android:tag="4" />
 
         <ImageButton
             android:id="@+id/cubo5"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="490dp"
+            android:layout_marginTop="81dp"
+            android:layout_marginLeft="265dp"
             android:tag="5" />
 
         <ImageButton
             android:id="@+id/cubo6"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginLeft="720dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginLeft="389dp"
+            android:layout_marginTop="189dp"
             android:tag="6" />
 
         <ImageButton
             android:id="@+id/cubo7"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="157dp"
             android:tag="7" />
 
         <ImageButton
             android:id="@+id/cubo8"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginLeft="108dp"
+            android:layout_marginTop="205dp"
             android:tag="8" />
 
         <ImageButton
             android:id="@+id/cubo9"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/azul"
-            android:layout_marginLeft="420dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginLeft="227dp"
+            android:layout_marginTop="162dp"
             android:tag="9" />
 
     </RelativeLayout>
@@ -123,7 +123,7 @@
     <Button
         android:id="@+id/ctrlBtn"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:text="Iniciar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"

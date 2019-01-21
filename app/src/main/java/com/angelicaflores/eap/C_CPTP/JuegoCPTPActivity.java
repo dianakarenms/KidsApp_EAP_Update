@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
+
 
 public class JuegoCPTPActivity extends AppCompatActivity {
     int curTime = 800;
@@ -29,11 +31,11 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
     long startTime, ellapsedTime;
     long estimatedTime;
-    ArrayList<Integer> list = new ArrayList<Integer> ();
 
     private ImageView imageSwitcher;
     Button btn;
     final String exerciseId = "2";
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     Context context;
 
     WebView wv;
@@ -89,7 +91,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData);
         }
     }
 
@@ -103,10 +105,10 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                     if(position != -1) {
                         int nCorrida = (int) Math.ceil((position + 1) / 6);
 
-                        list.add(gallery[position]);
-                        list.add(nCorrida);
-                        list.add((int) ellapsedTime);
-                        list.add(position);
+                        userData += gallery[position];
+                        userData += nCorrida;
+                        userData += (int) ellapsedTime;
+                        userData += position;
                     }
                     break;
             }
@@ -189,7 +191,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
     };
 }

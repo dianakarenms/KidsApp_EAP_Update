@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
+
 public class JuegoCorsiActivity extends AppCompatActivity
 {
 
@@ -35,7 +37,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
     String font_path = "font/ChalkboardSE.ttc";
     Typeface TF;
     long startTime, ellapsedTime;
-    ArrayList<Integer> list = new ArrayList<Integer> ();
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     Context context;
     WebView wv;
 
@@ -68,15 +70,15 @@ public class JuegoCorsiActivity extends AppCompatActivity
         context = this;
         TF = Typeface.createFromAsset(getAssets(), font_path);
 
-        semaphore = (ImageView)findViewById(R.id.imgsemaforo);
-        ctrlBtn = (Button) findViewById(R.id.ctrlBtn);
+        semaphore = findViewById(R.id.imgsemaforo);
+        ctrlBtn = findViewById(R.id.ctrlBtn);
         ctrlBtn.setOnClickListener(onClick);
         ctrlBtn.setTypeface(TF, Typeface.BOLD);
 
         for(int i=1; i<=9; i++){
             name = "cubo" + i;
             figId = getResources().getIdentifier(name, "id", getPackageName());
-            cuboBtn = (ImageButton) findViewById(figId);
+            cuboBtn = findViewById(figId);
             cuboBtn.setOnClickListener(onClick);
             cuboBtn.setClickable(false);
         }
@@ -118,7 +120,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData);
         }
     }
 
@@ -139,20 +141,20 @@ public class JuegoCorsiActivity extends AppCompatActivity
                         for(int i=1; i<=9; i++){
                             name = "cubo" + i;
                             figId = getResources().getIdentifier(name, "id", getPackageName());
-                            cuboBtn = (ImageButton) findViewById(figId);
+                            cuboBtn = findViewById(figId);
                             cuboBtn.setClickable(false);
                         }
 
                         estimNum++;
                     }
 
-                    cuboBtn = (ImageButton) findViewById(v.getId());
+                    cuboBtn = findViewById(v.getId());
                     cuboBtn.setBackgroundResource(R.drawable.amarillo);
                     cuboBtn.setClickable(false);
                     clickNum++;
 
-                    list.add(Integer.parseInt(String.valueOf(v.getTag())));
-                    list.add((int) ellapsedTime);
+                    userData += Integer.parseInt(String.valueOf(v.getTag())) + ",";
+                    userData += ((int) ellapsedTime) + ",\n";
                 }
 
             switch (v.getId()) {
@@ -161,7 +163,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
                         ctrlBtn.setClickable(false);
 
                         endFlag = true;
-                        wv = (WebView) findViewById(R.id.webView);
+                        wv = findViewById(R.id.webView);
 
                         // mostrar gif de fuegos artificiales
                         wv.setVisibility(View.VISIBLE);
@@ -175,7 +177,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
                         for(int i=1; i<=9; i++){
                             name = "cubo" + i;
                             figId = getResources().getIdentifier(name, "id", getPackageName());
-                            cuboBtn = (ImageButton) findViewById(figId);
+                            cuboBtn = findViewById(figId);
                             cuboBtn.setBackgroundResource(R.drawable.azul);
                             cuboBtn.setClickable(false);
                         }
@@ -208,7 +210,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
                         if(counter <= estimElements[estimNum]) {
                             name = "cubo" + gallery[position];
                             figId = getResources().getIdentifier(name, "id", getPackageName());
-                            cuboBtn = (ImageButton) findViewById(figId);
+                            cuboBtn = findViewById(figId);
                             cuboBtn.setBackgroundResource(R.drawable.amarillo);
                             position++;
                             counter++;
@@ -218,7 +220,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
                             for(int i=1; i<=9; i++){
                                 name = "cubo" + i;
                                 figId = getResources().getIdentifier(name, "id", getPackageName());
-                                cuboBtn = (ImageButton) findViewById(figId);
+                                cuboBtn = findViewById(figId);
                                 cuboBtn.setBackgroundResource(R.drawable.azul);
                                 cuboBtn.setClickable(true);
                             }
@@ -256,7 +258,7 @@ public class JuegoCorsiActivity extends AppCompatActivity
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
     };
 

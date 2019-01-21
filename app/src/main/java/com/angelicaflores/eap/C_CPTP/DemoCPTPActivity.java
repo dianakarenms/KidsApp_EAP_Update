@@ -60,13 +60,13 @@ public class DemoCPTPActivity extends AppCompatActivity {
 
                     /*if (imageSwitcher.getTag() == "1") {
                         //aplauso.start();
-                        list.add(gallery[position]);
+                        userData.add(gallery[position]);
                     } else if(imageSwitcher.getTag() == "0"){
                         //abucheo.start();
-                        list.add(gallery[position]);
+                        userData.add(gallery[position]);
                     }
 
-                    list.add((int) ellapsedTime);*/
+                    userData.add((int) ellapsedTime);*/
                 }
             });
 

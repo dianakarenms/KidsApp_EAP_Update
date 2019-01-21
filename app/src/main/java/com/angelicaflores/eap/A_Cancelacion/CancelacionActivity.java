@@ -24,14 +24,16 @@ import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
 import java.util.ArrayList;
 
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
+
 
 public class CancelacionActivity extends AppCompatActivity {
 
     Button finalizarBtn;
     CancelacionAdapter adapter;
     SharedPreferences prefs;
-    ArrayList<String> userData = new ArrayList<String>();
     String exerciseId = "1";
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     String exSol;
     ArrayList<Integer> figArray;
     String tempData;
@@ -109,7 +111,7 @@ public class CancelacionActivity extends AppCompatActivity {
                 finish();
 
                 storeDataInLocalTxt store = new storeDataInLocalTxt(this);
-                store.saveData(userData.toString());
+                store.saveData(userData);
             } else {
                 Intent i = new Intent(CancelacionActivity.this, ElegirEjercicioActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -180,11 +182,11 @@ public class CancelacionActivity extends AppCompatActivity {
 
                 case R.id.finalizarBtn:
                     if(finalizarBtn.getText() ==  "Siguiente") {
-                        userData = concat(userData, adapter.getMylist());
+                        userData += adapter.getPickedData();
                         iniciarJuego();
                     } else { //si finalizar
                         finalizarBtn.setClickable(false);
-                        userData = concat(userData, adapter.getMylist());
+                        userData += adapter.getPickedData();
 
                         endFlag = true;
                         // mostrar gif de fuegos artificiales
@@ -210,7 +212,7 @@ public class CancelacionActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData.toString());
+            store.saveData(userData);
         }
     };
 

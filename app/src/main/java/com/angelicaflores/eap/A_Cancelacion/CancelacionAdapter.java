@@ -29,7 +29,7 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
     int exSol;
 
     /* Variables creadas y modificadas internamente */
-    ArrayList<String> mylist =  new ArrayList<String>(); // array para guardar los datos de cada imagen seleccionada
+    String pickedData = ""; // array para guardar los datos de cada imagen seleccionada
     long initTime;  //guarda el tiempo de inicio antes del click
 
     // Adapter construtor
@@ -63,7 +63,7 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
     class ViewHolder{
         ImageView myFigure;
         ViewHolder(View v){
-            myFigure = (ImageView) v.findViewById(R.id.imageViewP);
+            myFigure = v.findViewById(R.id.imageViewP);
         }
     }
 
@@ -72,8 +72,8 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
         return elapsedTime;
     }
 
-    public ArrayList<String> getMylist () {
-        return mylist;
+    public String getPickedData() {
+        return pickedData;
     }
 
     //
@@ -128,9 +128,9 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
                 Log.i("elapsedTime", Long.toString(elapsedTime));
 
                 // Se agregan los nuevos datos en el array
-                mylist.add(String.valueOf(data.get(position).counterId)); // add id
-                mylist.add(Long.toString(elapsedTime)); // add elapsed time between last click and current click
-                mylist.add(String.valueOf(position)); // add position value
+                pickedData += data.get(position).figureName + ","; // add figure id
+                pickedData += Long.toString(elapsedTime) + ","; // add elapsed time between last click and current click
+                pickedData += String.valueOf(position) + ",\n"; // add position value
 
                 Log.i("Control Button Clicked", "**********");
             }

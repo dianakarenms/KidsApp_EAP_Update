@@ -30,4 +30,5 @@
     <string name="title_activity_pescado__presentacion">Pescado_PresentacionActivity</string>
     <string name="title_activity_pescado__juego">Pescado_JuegoActivity</string>
     <string name="cptp_instr_title">En la parte central de la pantalla aparecerán varias imágenes, toca la pantalla cuando veas la imagen del cerdito.</string>
+    <string name="login_name_field">Nombre del niño</string>
 </resources>

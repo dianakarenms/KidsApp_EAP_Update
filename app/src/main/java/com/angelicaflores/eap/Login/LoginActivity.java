@@ -91,14 +91,18 @@ public class LoginActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                user = usuarioField.getText().toString();
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("userId", user);
-                editor.commit();
+                if(!usuarioField.getText().toString().isEmpty()) {
+                    user = usuarioField.getText().toString();
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("userId", user);
+                    editor.commit();
 
-                Intent intent = new Intent(LoginActivity.this, ElegirEjercicioActivity.class);
-                LoginActivity.this.startActivity(intent);
-                finish();
+                    Intent intent = new Intent(LoginActivity.this, ElegirEjercicioActivity.class);
+                    LoginActivity.this.startActivity(intent);
+                    finish();
+                } else {
+                    usuarioField.setError("Campo obligatorio");
+                }
             }
         });
     } // onCreate()

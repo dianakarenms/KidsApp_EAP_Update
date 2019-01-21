@@ -9,7 +9,7 @@
     <!-- Title Text -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="#5fc100"
         android:text="Instrucciones"
         android:id="@+id/titleTxt"
@@ -46,7 +46,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Los cubos azules cambiarán a color amarillo en un orden, presiónalos siguiendo ese mismo orden."
                 android:id="@+id/instrTxt"
-                android:textSize="35dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:gravity="center"
@@ -134,9 +134,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:textColor="#fff"
-        android:textSize="25dp"
-        android:layout_marginBottom="40dp"
-        android:paddingLeft="35dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="4dp"
+        android:paddingLeft="3dp"
         android:text="Práctica"/>
 
     <TextView
@@ -146,9 +146,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:textColor="#fff"
-        android:textSize="25dp"
-        android:layout_marginBottom="40dp"
-        android:paddingRight="35dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="4dp"
+        android:paddingRight="3dp"
         android:text="¡A jugar!" />
 
 

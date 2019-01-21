@@ -1256,6 +1256,7 @@ string bottom_sheet_behavior
 string character_counter_pattern
 string cptp_instr_title
 string hello_world
+string login_name_field
 string lorem_ipsum
 string password_toggle_content_description
 string path_password_eye

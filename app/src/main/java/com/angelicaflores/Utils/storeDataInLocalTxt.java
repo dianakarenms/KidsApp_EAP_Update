@@ -52,6 +52,9 @@ public final class storeDataInLocalTxt {
     //URL del archivo PHP para crear un producto nuevo
     public static String url_json = "http://104.131.143.76/eap/include/data2.php";
     Boolean exitSave;
+    private int tryNumber = 1;
+    private File dir;
+    private File file;
     //String statusTxt;
 
     public storeDataInLocalTxt(Context context){
@@ -173,22 +176,18 @@ public final class storeDataInLocalTxt {
         }
 
         //Create a new file that points to the root directory, with the given name:
-        final File dir = new File(context.getExternalFilesDir(null), "EAPdata/");
+        dir = new File(context.getExternalFilesDir(null), "EAPdata/");
         if(!dir.exists()) {
             if(!dir.mkdirs()) {
                 Log.e("ALERT", "could not create directories");
             }
         }
 
-        final File file = new File(dir,  usrId + "_Ex" + exId + ".txt");
+        createNewTry();
 
         //This point and below is responsible for the write operation
         FileOutputStream outputStream;
         try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
             //second argument of FileOutputStream constructor indicates whether
             //to append or create new file if one exists
             outputStream = new FileOutputStream(file, true);
@@ -196,6 +195,20 @@ public final class storeDataInLocalTxt {
             outputStream.write(data.getBytes());
             outputStream.flush();
             outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createNewTry() {
+        file = new File(dir,  usrId + "_" + Constants.gamesNames.get(Integer.valueOf(exId)) + "_" + tryNumber + ".txt");
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            } else {
+                tryNumber ++;
+                createNewTry();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
