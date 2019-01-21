@@ -13,11 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.Utils.storeDataInLocalTxt;
 import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
-import com.angelicaflores.Utils.storeDataInLocalTxt;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -41,6 +41,14 @@ public class JuegoCPTPActivity extends AppCompatActivity {
     WebView wv;
 
     private boolean endFlag;
+    private HashMap<Integer, String> figureNames = new HashMap<Integer, String>() {{
+        put(0,"Cerdito");
+        put(1,"Mujer");
+        put(2,"Paleta");
+        put(3,"Sol");
+        put(4,"Helado");
+        put(5,"Flor");
+    }};
     private  int[] figures = {
             R.drawable.puerco, R.drawable.mujer, R.drawable.paleta, R.drawable.sol, R.drawable.helado,R.drawable.flor};
     private int[] gallery = {
@@ -105,10 +113,10 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                     if(position != -1) {
                         int nCorrida = (int) Math.ceil((position + 1) / 6);
 
-                        userData += gallery[position];
-                        userData += nCorrida;
-                        userData += (int) ellapsedTime;
-                        userData += position;
+                        userData += figureNames.get(gallery[position]) + ",";
+                        userData += nCorrida + ",";
+                        userData += (int) ellapsedTime + ",";
+                        userData += position + ",\n";
                     }
                     break;
             }

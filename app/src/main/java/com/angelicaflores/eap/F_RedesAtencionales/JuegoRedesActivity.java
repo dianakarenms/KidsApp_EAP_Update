@@ -16,14 +16,15 @@ import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
 import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.Utils.storeDataInLocalTxt;
 import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
-import com.angelicaflores.Utils.storeDataInLocalTxt;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 public class JuegoRedesActivity extends AppCompatActivity {
 
@@ -178,8 +179,8 @@ public class JuegoRedesActivity extends AppCompatActivity {
     //starTimer variables
     long startTime, ellapsedTime;
     long estimatedTime;
-    ArrayList<Integer> list = new ArrayList<Integer> ();
     final String exerciseId = "6";
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     Context context;
     int curTime; // Curtime init time
     Boolean ranActive = true;
@@ -193,20 +194,13 @@ public class JuegoRedesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redes_juego);
 
-        /*Bundle extras = getIntent().getExtras();
-        if(extras != null)
-            exerciseId = extras.getString("exerciseId"); //if it's a string you stored. */
-
         context = this;
 
-        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
-
-        BtnDerecho = (Button) findViewById(R.id.buttonD);
+        BtnDerecho = findViewById(R.id.buttonD);
         BtnDerecho.setOnClickListener(onClick);
-        BtnIzquierdo = (Button) findViewById(R.id.buttonI);
+        BtnIzquierdo = findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
-        BtnPausa = (Button) findViewById(R.id.pausaBtn);
+        BtnPausa = findViewById(R.id.pausaBtn);
         BtnPausa.setOnClickListener(onClick);
 
         SharedPreferences prefs = this.getSharedPreferences(
@@ -216,7 +210,7 @@ public class JuegoRedesActivity extends AppCompatActivity {
         editor.putString("exerciseId", exerciseId);
         editor.commit();
 
-        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
+        imageSwitcher = findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
@@ -271,9 +265,9 @@ public class JuegoRedesActivity extends AppCompatActivity {
                     clickFlag = true; //b
                     curTime = (int) (estimatedTime+300);
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",\n";
                     Log.d("nCorrida", String.valueOf(nCorrida));
                     break;
 
@@ -307,9 +301,9 @@ public class JuegoRedesActivity extends AppCompatActivity {
                     clickFlag = true;
                     curTime = (int) (estimatedTime+300); // tiempo de espacio para reproducir sonido de feedback
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",\n";
                     break;
 
                 case R.id.pausaBtn:
@@ -333,7 +327,7 @@ public class JuegoRedesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
     }
 
@@ -349,14 +343,14 @@ public class JuegoRedesActivity extends AppCompatActivity {
 
             public void run() {
                 estimatedTime += 50;
-                if (estimatedTime == curTime  || clickFlag == true) {
+                if (estimatedTime == curTime  || clickFlag) {
                     Log.d("ellapsed", String.valueOf(estimatedTime));
                     estimatedTime = 0;
 
                     runOnUiThread(new Runnable() {
                         public void run() {
                             // Asignacion de tiempos de muestreo
-                            if ((position+3)%4 == 0 && clickFlag == false) {
+                            if ((position+3)%4 == 0 && clickFlag) {
                                 curTime = 150; // inicia cue types
                                 ranActive = false;
                             } else if((position+2)%4 == 0) {
@@ -367,7 +361,7 @@ public class JuegoRedesActivity extends AppCompatActivity {
                                 BtnDerecho.setClickable(true);
                                 BtnIzquierdo.setClickable(true);
                                 startTime = System.currentTimeMillis();
-                            } else if (position%4 == 0 || clickFlag == true) {
+                            } else if (position%4 == 0 || clickFlag) {
                                 curTime = (getRandom(0,24)*50)+400; // inicia fijación
 
 
@@ -394,7 +388,7 @@ public class JuegoRedesActivity extends AppCompatActivity {
 
                             if (position == gallery.length) {
                                 timer.cancel();
-                                wv = (WebView) findViewById(R.id.webView);
+                                wv = findViewById(R.id.webView);
 
                                 // mostrar gif de fuegos artificiales
                                 wv.setVisibility(View.VISIBLE);
@@ -430,7 +424,7 @@ public class JuegoRedesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData);
         }
     };
 }

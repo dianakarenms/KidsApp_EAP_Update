@@ -19,14 +19,15 @@ import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
 import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.Utils.storeDataInLocalTxt;
 import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
-import com.angelicaflores.Utils.storeDataInLocalTxt;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 public class JuegoFlankerActivity extends AppCompatActivity {
 
@@ -34,7 +35,6 @@ public class JuegoFlankerActivity extends AppCompatActivity {
     TextToSpeech t1;
     RelativeLayout LayoudPrincipal;
     Button BtnSalir;
-    //MediaPlayer abucheo, aplauso;
     private ImageSwitcher imageSwitcher;
 
     //StartTimer variables
@@ -43,9 +43,8 @@ public class JuegoFlankerActivity extends AppCompatActivity {
     final String exerciseId = "3";
     Context context;
     int curTime; // Curtime init time
-    //Boolean flag = false;
     Boolean clickFlag = false; // bandera para determinar si se ya se dio la respuesta durante el tiempo de 5seg de estímulo
-    ArrayList<Integer> list = new ArrayList<Integer> ();
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     int result = 0;
 
     int position = 1;
@@ -71,17 +70,14 @@ public class JuegoFlankerActivity extends AppCompatActivity {
 
         context = this;
 
-        BtnDerecho = (ImageButton) findViewById(R.id.buttonD);
+        BtnDerecho = findViewById(R.id.buttonD);
         BtnDerecho.setOnClickListener(onClick);
-        BtnIzquierdo = (ImageButton) findViewById(R.id.buttonI);
+        BtnIzquierdo = findViewById(R.id.buttonI);
         BtnIzquierdo.setOnClickListener(onClick);
-        BtnSalir= (Button) findViewById(R.id.button5);
+        BtnSalir= findViewById(R.id.button5);
         BtnSalir.setOnClickListener(onClick);
 
-        LayoudPrincipal=(RelativeLayout) findViewById(R.id.layoudPrincipal);
-
-        //aplauso = MediaPlayer.create(this,R.raw.aplauso);
-        //abucheo = MediaPlayer.create(this,R.raw.abucheo);
+        LayoudPrincipal = findViewById(R.id.layoudPrincipal);
 
         //Metodo ocupado para pasar el texto de la instruccion a sonido.
         t1=new
@@ -97,7 +93,7 @@ public class JuegoFlankerActivity extends AppCompatActivity {
                 }
         );
 
-        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
+        imageSwitcher = findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             public View makeView() {
                 ImageView imageView = new ImageView(JuegoFlankerActivity.this);
@@ -114,13 +110,6 @@ public class JuegoFlankerActivity extends AppCompatActivity {
         editor.putString("exerciseId", exerciseId);
         editor.commit();
 
-        /*Bundle extras = getIntent().getExtras();
-        if(extras != null) {
-            exerciseId = extras.getString("exerciseId"); //if it's a string you stored.
-
-            Log.d("idflanker", exerciseId);
-        }*/
-
         startTimer();
     }
 
@@ -136,7 +125,7 @@ public class JuegoFlankerActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
     }
 
@@ -153,20 +142,19 @@ public class JuegoFlankerActivity extends AppCompatActivity {
                     BtnIzquierdo.setClickable(false);
                     if (position == 11 ||position == 12 || position == 15 || position == 16 ||position == 31 || position == 32 ||position == 39 || position == 40 ||position == 47 || position == 48 ||position == 55 || position == 56 ||position == 67 || position == 68 ||
                             position == 71 || position == 72 ||position == 75 || position == 76 ||position == 83 || position == 84 ||position == 87 || position == 88 ||position == 91 || position == 92 ||position == 99 || position == 100 ||position == 103 || position == 104 ||position == 115 || position == 116 ||position == 123 || position == 124) {
-                        //abucheo.start();
                         result = 0;
 
                     }
                     if (position == 3 || position == 4 ||position == 7 || position == 8 ||position == 19 || position == 20 ||position == 23 || position == 24 ||position == 27 || position == 28 ||position == 35 || position == 36 ||position == 43 || position == 44 || position == 51 || position == 52 ||
                             position == 59 || position == 60 ||position == 63 || position == 64 ||position == 79 || position == 80 || position == 95 || position == 96 ||position == 107 || position == 108 ||position == 111 || position == 112 ||position == 119 || position == 120 ||position == 127 ||position == 128) {
-                        //aplauso.start();
                         result = 1;
                     }
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
-                    list.add(gallery[position-1]);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",";
+                    userData += gallery[position-1] + ",\n";
+
                     Log.d("gallery[pos]", String.valueOf(gallery[position-1]));
 
                     clickFlag = true;
@@ -177,19 +165,18 @@ public class JuegoFlankerActivity extends AppCompatActivity {
                     BtnIzquierdo.setClickable(false);
                     if (position == 11 ||position == 12 || position == 15 || position == 16 ||position == 31 || position == 32 ||position == 39 || position == 40 ||position == 47 || position == 48 ||position == 55 || position == 56 ||position == 67 || position == 68 ||
                             position == 71 || position == 72 ||position == 75 || position == 76 ||position == 83 || position == 84 ||position == 87 || position == 88 ||position == 91 || position == 92 ||position == 99 || position == 100 ||position == 103 || position == 104 ||position == 115 || position == 116 ||position == 123 || position == 124) {
-                        //aplauso.start();
                         result = 1;
                     }
                     if (position == 3 || position == 4 ||position == 7 || position == 8 ||position == 19 || position == 20 ||position == 23 || position == 24 ||position == 27 || position == 28 ||position == 35 || position == 36 ||position == 43 || position == 44 || position == 51 || position == 52 ||
                             position == 59 || position == 60 ||position == 63 || position == 64 ||position == 79 || position == 80 || position == 95 || position == 96 ||position == 107 || position == 108 ||position == 111 || position == 112 ||position == 119 || position == 120 ||position == 127 ||position == 128) {
-                        //abucheo.start();
                         result = 0;
                     }
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
-                    list.add(gallery[position-1]);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",";
+                    userData += gallery[position-1] + ",\n";
+
                     Log.d("gallery[pos]", String.valueOf(gallery[position-1]));
 
                     clickFlag = true;
@@ -217,9 +204,8 @@ public class JuegoFlankerActivity extends AppCompatActivity {
 
             public void run() {
                 estimatedTime += 50;
-                if (estimatedTime == curTime || clickFlag == true) {
+                if (estimatedTime == curTime || clickFlag) {
                     ellapsedTime = System.currentTimeMillis() - startTime;
-                    //Log.d("ellapsed", String.valueOf(ellapsedTime));
                     Log.d("ellapsed", String.valueOf(estimatedTime));
                     estimatedTime = 0;
 
@@ -235,13 +221,13 @@ public class JuegoFlankerActivity extends AppCompatActivity {
                                 BtnIzquierdo.setClickable(true);
                                 startTime = System.currentTimeMillis();
 
-                            } else if ((position+1)%4 == 0 || clickFlag == true) {
+                            } else if ((position+1)%4 == 0 || clickFlag) {
                                 curTime = 2000; // inicia interestimulo
                                 clickFlag = false;
                                 BtnDerecho.setClickable(false);
                                 BtnIzquierdo.setClickable(false);
 
-                            } else if (position%4 == 0 && clickFlag == false) {
+                            } else if (position%4 == 0 && clickFlag) {
                                 curTime = 300; // inicia semaforo
                                 BtnDerecho.setVisibility(View.INVISIBLE);
                                 BtnIzquierdo.setVisibility(View.INVISIBLE);
@@ -264,12 +250,11 @@ public class JuegoFlankerActivity extends AppCompatActivity {
                                 timer.cancel();
                                 BtnDerecho.setVisibility(View.INVISIBLE);
                                 BtnIzquierdo.setVisibility(View.INVISIBLE);
-                                //BtnSalir.setVisibility(View.VISIBLE);
                                 imageSwitcher.setVisibility(View.INVISIBLE);
 
                                 endFlag = true;
 
-                                wv = (WebView) findViewById(R.id.webView);
+                                wv = findViewById(R.id.webView);
                                 // mostrar gif de fuegos artificiales
                                 wv.setVisibility(View.VISIBLE);
                                 wv.loadUrl("file:///android_asset/gifs/index.html");
@@ -293,7 +278,7 @@ public class JuegoFlankerActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData);
         }
     };
 }

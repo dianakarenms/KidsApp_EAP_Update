@@ -9,7 +9,7 @@
 <!-- Title Text -->
 <TextView
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:background="#ef2bd3"
     android:text="Instrucciones"
     android:id="@+id/titleTxt"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Unas estrellas y unos triángulos aparecerán en la pantalla. Observa la figura del centro y presiona el botón que corresponda a la figura del centro."
-            android:textSize="35dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="#000"
             android:gravity="center"
@@ -71,16 +71,16 @@
             android:layout_weight="3">
 
             <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:id="@+id/imageViewP"
                 android:background="@drawable/triangulo1"
                 android:visibility="visible"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"/>
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:id="@+id/imageViewI"
                 android:background="@drawable/manoizquierda"
                 android:visibility="visible"
@@ -88,8 +88,8 @@
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:id="@+id/imageView2"
                 android:background="@drawable/estrellasola"
                 android:visibility="visible"
@@ -97,8 +97,8 @@
                 android:layout_alignParentTop="true"/>
 
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:id="@+id/imageViewD"
                 android:background="@drawable/manoderecha"
                 android:visibility="visible"
@@ -111,7 +111,7 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:text="Continuar"
         android:paddingRight="40dp"
         android:paddingLeft="40dp"

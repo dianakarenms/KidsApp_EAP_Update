@@ -18,14 +18,15 @@ import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
 import com.angelicaflores.Utils.Constants;
+import com.angelicaflores.Utils.storeDataInLocalTxt;
 import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
-import com.angelicaflores.Utils.storeDataInLocalTxt;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 /**
  * Created by GPS-003 on 28/07/2015.
@@ -42,8 +43,8 @@ public class JuegoClavesActivity extends AppCompatActivity {
     //starTimer variables
     long startTime, ellapsedTime;
     long estimatedTime;
-    ArrayList<Integer> list = new ArrayList<Integer> ();
     final String exerciseId = "4";
+    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     Context context;
     int curTime; // Curtime init time
     Boolean flag = false;
@@ -196,7 +197,7 @@ public class JuegoClavesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
 
     }
@@ -238,9 +239,9 @@ public class JuegoClavesActivity extends AppCompatActivity {
                         nCorrida ++;
                     }
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",\n";
                     Log.d("nCorrida", String.valueOf(nCorrida));
                     break;
 
@@ -287,11 +288,11 @@ public class JuegoClavesActivity extends AppCompatActivity {
                         handler.postDelayed(runnable, 3000);
                     }
 
-                    list.add(result);
-                    list.add(nCorrida);
-                    list.add((int) ellapsedTime);
+                    userData += result + ",";
+                    userData += nCorrida + ",";
+                    userData += (int) ellapsedTime + ",\n";
                     Log.d("nCorrida", String.valueOf(nCorrida));
-                    Log.d("List", String.valueOf(list));
+                    Log.d("List", String.valueOf(userData));
                     break;
 
                 case R.id.continuarBtn:
@@ -340,10 +341,10 @@ public class JuegoClavesActivity extends AppCompatActivity {
                                 if( BtnIzquierdo.isClickable() == true ) {
                                     int nCorrida = (int) Math.ceil( (position)/4);
                                     result = 3;
-                                    list.add(result);
-                                    list.add(nCorrida);
-                                    list.add(0);
-                                    Log.d("List", String.valueOf(list));
+                                    userData += result + ",";
+                                    userData += nCorrida + ",";
+                                    userData += 0 + ",\n";
+                                    Log.d("List", String.valueOf(userData));
                                     Log.d("nCorrida", String.valueOf(nCorrida));
                                 }
 
@@ -402,7 +403,7 @@ public class JuegoClavesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(list.toString());
+            store.saveData(userData.toString());
         }
     };
 }
