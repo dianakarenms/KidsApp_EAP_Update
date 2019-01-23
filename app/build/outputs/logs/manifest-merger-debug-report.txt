@@ -8,6 +8,7 @@ MERGED from [com.android.support:design:27.1.1] /Users/developer/.gradle/caches/
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b0c40f3960cd904274d13df9bb7eb841/AndroidManifest.xml:17:1-22:12
 MERGED from [com.flipboard:bottomsheet-commons:1.5.0] /Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-commons-1.5.0.aar/03202a8026125c5f107cc3713986761f/AndroidManifest.xml:2:1-9:12
 MERGED from [com.flipboard:bottomsheet-core:1.5.0] /Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-core-1.5.0.aar/cadbb120a9931f21fddd400b605e02df/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/developer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/3a6df6f019a14b6915248d34c61c8948/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/a711b7fe7504aa0e6261d372b3c5ca53/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/ad62920143c48734ce2371c3b49ec487/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/b43491886f07a3bf2fe0be3754d7779f/AndroidManifest.xml:17:1-22:12
@@ -59,6 +60,8 @@ ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/Andr
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:9:22-78
 application
 ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:12:5-105:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/developer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/3a6df6f019a14b6915248d34c61c8948/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/developer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/3a6df6f019a14b6915248d34c61c8948/AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from /Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/main/AndroidManifest.xml:15:9-41
 	android:icon
@@ -229,6 +232,8 @@ MERGED from [com.flipboard:bottomsheet-commons:1.5.0] /Users/developer/.gradle/c
 MERGED from [com.flipboard:bottomsheet-commons:1.5.0] /Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-commons-1.5.0.aar/03202a8026125c5f107cc3713986761f/AndroidManifest.xml:5:5-7:41
 MERGED from [com.flipboard:bottomsheet-core:1.5.0] /Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-core-1.5.0.aar/cadbb120a9931f21fddd400b605e02df/AndroidManifest.xml:5:5-7:41
 MERGED from [com.flipboard:bottomsheet-core:1.5.0] /Users/developer/.gradle/caches/transforms-1/files-1.1/bottomsheet-core-1.5.0.aar/cadbb120a9931f21fddd400b605e02df/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/developer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/3a6df6f019a14b6915248d34c61c8948/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/developer/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/3a6df6f019a14b6915248d34c61c8948/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/a711b7fe7504aa0e6261d372b3c5ca53/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/a711b7fe7504aa0e6261d372b3c5ca53/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/developer/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/ad62920143c48734ce2371c3b49ec487/AndroidManifest.xml:20:5-44

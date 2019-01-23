@@ -5,24 +5,24 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
-    ir-eligibility="FIELD_REMOVED"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.3.0"
-    timestamp="1547847578096"
+    timestamp="1548108834967"
     token="3207326963198523786"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="340" />
+        duration="259" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="27" />
+        duration="4" />
     <task
         name="verifier"
-        duration="4" />
+        duration="1" />
 
     <artifact
         location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -30,7 +30,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1547847032024"
+        timestamp="1548103428181"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -74,8 +74,35 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_REMOVED"
-        timestamp="1547847578096"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1548106482600"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_TYPE_CHANGE"
+        timestamp="1548108356883"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1548108834967"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/build/intermediates/split-apk/debug/slices/slice_3.apk"

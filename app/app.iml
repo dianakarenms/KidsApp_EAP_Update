@@ -128,28 +128,30 @@
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/libs/svg-android.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:27.1.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils:27.1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:transition:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel:1.1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-core-ui:27.1.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-compat:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/developer/AndroidProjects/KidsApp_EAP_Update/app/src/androidTest/java/lib/simpleftp.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4:27.1.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:runtime:1.1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-fragment:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:27.1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout:1.1.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.flipboard:bottomsheet-commons:1.5.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-core-ui:27.1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-compat:27.1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:27.1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-fragment:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.flipboard:bottomsheet-core:1.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.flipboard:bottomsheet-commons:1.5.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.3@jar" level="project" />
   </component>
 </module>

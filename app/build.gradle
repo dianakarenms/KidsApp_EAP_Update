@@ -8,8 +8,8 @@ android {
         applicationId "com.angelicaflores.eap"
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0.0"
     }
     buildTypes {
         release {
@@ -25,6 +25,8 @@ dependencies {
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     implementation 'com.flipboard:bottomsheet-core:1.5.0'
-    implementation 'com.flipboard:bottomsheet-commons:1.5.0' // optional
+    implementation 'com.flipboard:bottomsheet-commons:1.5.0'
+    // optional
     implementation files('src/androidTest/java/lib/simpleftp.jar')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

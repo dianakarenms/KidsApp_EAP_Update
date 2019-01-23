@@ -35,12 +35,12 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int grid = 0x7f090062;
-        public static final int icon = 0x7f090066;
-        public static final int label = 0x7f090078;
-        public static final int list = 0x7f09007f;
-        public static final int thumb = 0x7f0900d1;
-        public static final int title = 0x7f0900d3;
+        public static final int grid = 0x7f090066;
+        public static final int icon = 0x7f09006b;
+        public static final int label = 0x7f09007e;
+        public static final int list = 0x7f090085;
+        public static final int thumb = 0x7f0900dd;
+        public static final int title = 0x7f0900df;
     }
     public static final class layout {
         private layout() {}
