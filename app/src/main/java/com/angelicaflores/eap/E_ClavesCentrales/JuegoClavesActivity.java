@@ -197,7 +197,7 @@ public class JuegoClavesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData.toString());
+            store.saveData(userData, "");
         }
 
     }
@@ -403,7 +403,7 @@ public class JuegoClavesActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData.toString());
+            store.saveData(userData, "");
         }
     };
 }

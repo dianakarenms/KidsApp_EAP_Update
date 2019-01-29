@@ -125,7 +125,7 @@ public class JuegoFlankerActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData.toString());
+            store.saveData(userData, "");
         }
     }
 
@@ -278,7 +278,7 @@ public class JuegoFlankerActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData);
+            store.saveData(userData, "");
         }
     };
 }

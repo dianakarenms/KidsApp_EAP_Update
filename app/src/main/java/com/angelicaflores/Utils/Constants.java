@@ -75,4 +75,8 @@ public class Constants {
         return formattedData;
     }
 
+    public static String getComputedDataHeader() {
+        return "NumEnsayo,TR,TRPromedio,N_Aciertos,N_EComisión,N_EOmisión,P_EComisión,P_EOmisión,NumEstimulos,\n";
+    }
+
 }

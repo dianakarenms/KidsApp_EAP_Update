@@ -21,24 +21,28 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.angelicaflores.Utils.Constants.getComputedDataHeader;
 import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 
 public class JuegoCPTPActivity extends AppCompatActivity {
     int curTime = 800;
 
-    Timer timer;
+    private Timer timer;
 
     long startTime, ellapsedTime;
     long estimatedTime;
 
     private ImageView imageSwitcher;
-    Button btn;
-    final String exerciseId = "2";
-    String userData = getExerciseHeader(Integer.valueOf(exerciseId));
-    Context context;
+    private Button btn;
+    private final String exerciseId = "2";
+    private String userData = getExerciseHeader(Integer.valueOf(exerciseId));
+    private String computedData = "";// = getComputedDataHeader();
+    private Context context;
+    private HashMap<Integer, Integer> TR_Map = new HashMap<>();
+    private int N_EComision = 0;
 
-    WebView wv;
+    private WebView wv;
 
     private boolean endFlag;
     private HashMap<Integer, String> figureNames = new HashMap<Integer, String>() {{
@@ -64,6 +68,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
     };
 
     private int position = -1;
+    private int nCorrida = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,15 +96,8 @@ public class JuegoCPTPActivity extends AppCompatActivity {
     public void onBackPressed() {
         if(!endFlag) {
             timer.cancel();
-            position = -1;
 
-            Intent i = new Intent(context, ElegirEjercicioActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
-            finish();
-
-            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData);
+            saveData();
         }
     }
 
@@ -111,12 +109,18 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                     ellapsedTime = System.currentTimeMillis() - startTime;
 
                     if(position != -1) {
-                        int nCorrida = (int) Math.ceil((position + 1) / 6);
-
                         userData += figureNames.get(gallery[position]) + ",";
                         userData += nCorrida + ",";
-                        userData += (int) ellapsedTime + ",";
-                        userData += position + ",\n";
+                        userData += (int) ellapsedTime + ",\n";
+
+                        if (imageSwitcher.getTag() == "1") {
+                            // Picked Correct answer
+                            TR_Map.put(nCorrida, (int) ellapsedTime);
+                        } else if(imageSwitcher.getTag() == "0") {
+                            // Picked Wrong answer
+                            N_EComision ++;
+                        }
+
                     }
                     break;
             }
@@ -137,6 +141,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
                     runOnUiThread(new Runnable() {
                         public void run() {
+                            nCorrida = (int) Math.ceil(position / 6) + 1;
 
                             if (curTime == 800 /*|| curTime == 2000*/) { //inicia feedback
                                 btn.setClickable(true);
@@ -144,7 +149,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                                 if (position < gallery.length-1) {
                                     position++;
 
-                                    if (position == gallery.length)
+                                    if (position == gallery.length) // Prevents null pointer exception
                                         position = gallery.length - 1;
 
                                     imageSwitcher.setImageResource(figures[gallery[position]]);
@@ -178,7 +183,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                                 handler.postDelayed(runnable, 3000);
 
                                 cancel();
-                                position = -1;
+                                //position = -1; removed from here and added into saveData to reset only after data computation is completed
                             }
 
                         }
@@ -193,13 +198,48 @@ public class JuegoCPTPActivity extends AppCompatActivity {
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            Intent i = new Intent(context, ElegirEjercicioActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
-            finish();
-
-            storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData.toString());
+            saveData();
         }
     };
+
+    private void saveData() {
+        Intent i = new Intent(context, ElegirEjercicioActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
+        finish();
+
+        storeDataInLocalTxt store = new storeDataInLocalTxt(context);
+        store.saveData(userData, computeData());
+
+        position = -1;
+
+    }
+
+    private String computeData() {
+        String testData = "NumEnsayo,TR,\n";
+        int TRsum = 0, TRanswered = 0, N_EOmisión = 0;
+        for(int i = 1; i <= nCorrida; i++) {
+            // NumEnsayo,TR
+            if(TR_Map.containsKey(i)) {
+                testData += i + "," + TR_Map.get(i).toString() + ",\n";
+                TRsum += TR_Map.get(i);
+                TRanswered ++;
+            } else {
+                testData += i + ",0,\n";
+                N_EOmisión ++;
+            }
+        }
+        testData += "TRPromedio,N_Aciertos,N_EComisión,N_EOmisión,P_EComisión,P_EOmisión,NumEstimulos,\n";
+
+        float TRPromedio = TRsum / TRanswered;
+        testData += TRPromedio + ","; // TRPromedio
+        testData += TRanswered + ","; // N_Aciertos
+        testData += N_EComision + ","; // N_EComisión
+        testData += N_EOmisión + ","; // N_EOmisión
+        testData += "NA,"; // P_EComisión
+        testData += (float)((N_EOmisión * 100) / nCorrida) + "%,"; // P_EOmisión -> % de errores de omisión en todas las corrida realizadas
+        testData += position + 1;
+
+        return testData;
+    }
 }

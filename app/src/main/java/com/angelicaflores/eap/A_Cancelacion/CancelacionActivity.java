@@ -111,7 +111,7 @@ public class CancelacionActivity extends AppCompatActivity {
                 finish();
 
                 storeDataInLocalTxt store = new storeDataInLocalTxt(this);
-                store.saveData(userData);
+                store.saveData(userData, "");
             } else {
                 Intent i = new Intent(CancelacionActivity.this, ElegirEjercicioActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -212,7 +212,7 @@ public class CancelacionActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData);
+            store.saveData(userData, "");
         }
     };
 
