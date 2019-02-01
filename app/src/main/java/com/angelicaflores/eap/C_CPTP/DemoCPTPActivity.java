@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
@@ -51,7 +50,7 @@ public class DemoCPTPActivity extends AppCompatActivity {
             imageSwitcher.setVisibility(View.INVISIBLE);
             imageSwitcher.setTag("0");
 
-            btnMostrar = findViewById(R.id.button2);
+            btnMostrar = findViewById(R.id.cptpJuegoBtn);
 
             btnMostrar.setOnClickListener(new View.OnClickListener() {
                 @Override

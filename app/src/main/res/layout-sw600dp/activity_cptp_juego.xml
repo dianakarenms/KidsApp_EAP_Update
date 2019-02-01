@@ -20,11 +20,12 @@
 
 </LinearLayout>
     <Button
+        android:id="@+id/cptpJuegoBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/button2"
         android:layout_gravity="center_vertical"
-        android:background="@android:color/transparent" />
+        android:background="@android:color/transparent"
+        android:onClick="onClick"/>
 
     <WebView
         android:layout_width="match_parent"

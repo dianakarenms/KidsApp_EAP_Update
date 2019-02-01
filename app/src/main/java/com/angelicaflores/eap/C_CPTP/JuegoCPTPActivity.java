@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.angelicaflores.Utils.Constants.getComputedDataHeader;
 import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 
@@ -34,7 +33,6 @@ public class JuegoCPTPActivity extends AppCompatActivity {
     long estimatedTime;
 
     private ImageView imageSwitcher;
-    private Button btn;
     private final String exerciseId = "2";
     private String userData = getExerciseHeader(Integer.valueOf(exerciseId));
     private String computedData = "";// = getComputedDataHeader();
@@ -54,6 +52,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
         put(5,"Flor");
     }};
     private  int[] figures = {
+            //           0                  1                 2                 3                4                5
             R.drawable.puerco, R.drawable.mujer, R.drawable.paleta, R.drawable.sol, R.drawable.helado,R.drawable.flor};
     private int[] gallery = {
             5,0,1,2,3,4, 1,5,4,0,2,3, 1,5,2,3,4,0, 5,3,1,0,2,4, 5,3,1,4,2,0,
@@ -69,6 +68,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
     private int position = -1;
     private int nCorrida = 0;
+    private int lastClickedPosition = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +79,6 @@ public class JuegoCPTPActivity extends AppCompatActivity {
         imageSwitcher = findViewById(R.id.imageSwitcher);
         imageSwitcher.setVisibility(View.INVISIBLE);
         imageSwitcher.setTag("0");
-
-        btn = findViewById(R.id.button2);
-        btn.setOnClickListener(onClick);
 
         SharedPreferences prefs = this.getSharedPreferences(
                 Constants.prefsName, Context.MODE_PRIVATE);
@@ -101,31 +98,28 @@ public class JuegoCPTPActivity extends AppCompatActivity {
         }
     }
 
-    View.OnClickListener onClick =  new View.OnClickListener() {
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.button2:
-                    btn.setClickable(false);
-                    ellapsedTime = System.currentTimeMillis() - startTime;
 
-                    if(position != -1) {
-                        userData += figureNames.get(gallery[position]) + ",";
-                        userData += nCorrida + ",";
-                        userData += (int) ellapsedTime + ",\n";
+    public void onClick(View v) {
+        if(lastClickedPosition != position) {
+            lastClickedPosition = position;
+            ellapsedTime = System.currentTimeMillis() - startTime;
 
-                        if (imageSwitcher.getTag() == "1") {
-                            // Picked Correct answer
-                            TR_Map.put(nCorrida, (int) ellapsedTime);
-                        } else if(imageSwitcher.getTag() == "0") {
-                            // Picked Wrong answer
-                            N_EComision ++;
-                        }
+            if (position != -1) {
+                userData += figureNames.get(gallery[position]) + ",";
+                userData += nCorrida + ",";
+                userData += (int) ellapsedTime + ",\n";
 
-                    }
-                    break;
+                if (imageSwitcher.getTag() == "1") {
+                    // Picked Correct answer
+                    TR_Map.put(nCorrida, (int) ellapsedTime); // substituted to position
+                } else if (imageSwitcher.getTag() == "0") {
+                    // Picked Wrong answer
+                    N_EComision ++;
+                }
+
             }
         }
-    };
+    }
 
     public void startTimer() {
         startTime = System.currentTimeMillis();
@@ -141,10 +135,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            nCorrida = (int) Math.ceil(position / 6) + 1;
-
                             if (curTime == 800 /*|| curTime == 2000*/) { //inicia feedback
-                                btn.setClickable(true);
                                 startTime = System.currentTimeMillis();
                                 if (position < gallery.length-1) {
                                     position++;
@@ -160,6 +151,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
                                     imageSwitcher.setVisibility(View.VISIBLE);
                                     curTime = 750; // presentación de imagen
                                 }
+                                nCorrida = (int) Math.ceil( ((double) position + 1.0)/6.0 );
                             } else {
                                 // Time between stimulus
                                 imageSwitcher.setImageResource(R.drawable.cruz_blanca);
@@ -217,7 +209,7 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
     private String computeData() {
         String testData = "NumEnsayo,TR,\n";
-        int TRsum = 0, TRanswered = 0, N_EOmisión = 0;
+        float TRsum = 0, TRanswered = 0, N_EOmisión = 0;
         for(int i = 1; i <= nCorrida; i++) {
             // NumEnsayo,TR
             if(TR_Map.containsKey(i)) {
@@ -233,11 +225,11 @@ public class JuegoCPTPActivity extends AppCompatActivity {
 
         float TRPromedio = TRsum / TRanswered;
         testData += TRPromedio + ","; // TRPromedio
-        testData += TRanswered + ","; // N_Aciertos
+        testData += (int) TRanswered + ","; // N_Aciertos
         testData += N_EComision + ","; // N_EComisión
-        testData += N_EOmisión + ","; // N_EOmisión
+        testData += (int) N_EOmisión + ","; // N_EOmisión
         testData += "NA,"; // P_EComisión
-        testData += (float)((N_EOmisión * 100) / nCorrida) + "%,"; // P_EOmisión -> % de errores de omisión en todas las corrida realizadas
+        testData += ((N_EOmisión * 100) / nCorrida) + "%,"; // P_EOmisión -> % de errores de omisión en todas las corrida realizadas
         testData += position + 1;
 
         return testData;

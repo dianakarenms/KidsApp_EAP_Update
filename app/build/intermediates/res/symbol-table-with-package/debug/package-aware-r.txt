@@ -987,7 +987,6 @@ id btnDemo
 id btnJugar
 id btnjugar
 id btnpractica
-id button2
 id button5
 id buttonD
 id buttonI
@@ -1007,6 +1006,7 @@ id container
 id contentPanel
 id continuarBtn
 id coordinator
+id cptpJuegoBtn
 id ctrlBtn
 id cubo1
 id cubo2
