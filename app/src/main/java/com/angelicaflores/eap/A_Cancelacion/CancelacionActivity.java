@@ -47,7 +47,7 @@ public class CancelacionActivity extends AppCompatActivity {
     ImageButton boton, playBtn;
     Button continuarBtn;
 
-    Boolean nextScreenFlag = false;
+    //Boolean nextScreenFlag = false;
     Boolean flag = false;
 
     String font_path = "font/ChalkboardSE.ttc";
@@ -171,10 +171,10 @@ public class CancelacionActivity extends AppCompatActivity {
                     iniciarJuego();
                     break;
 
-                case R.id.continuarBtn:
+                /*case R.id.continuarBtn:
                         nextScreenFlag = true;
                         instrucciones();
-                    break;
+                    break;*/
 
                 case R.id.cancelacionDemoFinishBtn:
                     instrucciones();
@@ -276,7 +276,7 @@ public class CancelacionActivity extends AppCompatActivity {
         continuarBtn = findViewById(R.id.continuarBtn);
         continuarBtn.setOnClickListener(onClick);
 
-        if(nextScreenFlag == false){
+        /*if(nextScreenFlag == false){
             boton.setVisibility(View.INVISIBLE);
             playBtn.setVisibility(View.INVISIBLE);
             continuarBtn.setVisibility(View.VISIBLE);
@@ -295,7 +295,7 @@ public class CancelacionActivity extends AppCompatActivity {
             txt.setTypeface(TF, Typeface.BOLD);
 
             continuarBtn.setTypeface(TF,Typeface.BOLD);
-        } else {
+        } else {*/
             setContentView(R.layout.activity_cancelacion_instr);
             ImageView instrImg = findViewById(R.id.instrImage);
             instrImg.setImageResource(R.drawable.trianguloverde);
@@ -315,7 +315,7 @@ public class CancelacionActivity extends AppCompatActivity {
             txt.setTypeface(TF, Typeface.BOLD);
             txt = findViewById(R.id.instrTxt);
             txt.setTypeface(TF, Typeface.BOLD);
-        }
+        //}
 
     }
 

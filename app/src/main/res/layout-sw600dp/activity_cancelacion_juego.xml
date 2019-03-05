@@ -8,13 +8,13 @@
     <RelativeLayout
         android:id="@+id/titleTxt"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:background="#e5e5e1"
         android:layout_alignParentTop="true">
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_centerVertical="true"
             android:id="@+id/imageView3"
             app:srcCompat="@drawable/trianguloverde"
@@ -47,9 +47,9 @@
             android:stretchMode="columnWidth"
             android:gravity="center_vertical"
             android:layout_gravity="center"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
-            android:horizontalSpacing="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:horizontalSpacing="0dp"
             android:verticalSpacing="0dp"/>
 
     </LinearLayout>
