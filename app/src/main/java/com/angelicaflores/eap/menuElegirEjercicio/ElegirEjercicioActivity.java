@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by ge0va on 10/06/2015.
@@ -40,8 +41,36 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
     private PagerAdapter mPagerAdapter;
 
 
+    String cancPage1 = "4,2,1,0,2,1,2,4,3,2,2,3,4,1,4,2,3,1,0,4,2,0,2,4,3,0,4,0,2,1,3,1,2,1,0,4,0,3,4,3,0,4,1,0,4,2,1,4,1,4,1,0,4,3,2,3,4,1,0,2";
+    String cancPage2 = "1,4,2,0,4,1,3,4,3,1,3,2,3,4,1,2,4,3,2,4,2,4,0,2,3,4,1,0,1,2,0,1,4,1,0,3,0,4,0,4,2,0,1,3,4,1,2,1,4,0,4,3,0,2,1,0,4,3,0,3";
+    String cancPage3 = "2,3,1,2,0,4,1,2,1,3,0,4,1,0,2,1,2,4,3,4,2,4,0,3,0,2,4,3,4,1,3,2,4,3,4,3,4,0,4,1,0,4,3,1,4,3,4,3,1,4,1,3,4,1,0,2,0,1,0,2";
+    String cancPage4 = "1,4,0,3,0,3,1,4,0,4,1,3,1,0,2,0,4,3,0,1,4,1,4,2,4,2,4,1,4,3,1,0,1,2,4,1,0,1,4,0,3,4,3,2,3,0,4,3,2,0,3,1,0,2,1,3,2,1,4,1";
+    String cancPage5 = "3,4,3,1,2,0,3,1,2,4,3,0,3,0,3,2,1,3,4,3,2,4,0,1,3,4,2,3,4,0,4,2,1,2,3,2,4,2,4,0,1,3,2,4,3,2,1,4,0,2,0,3,1,2,4,0,2,3,4,2";
+
+    String[] cancelPages = new String[]{cancPage1, cancPage2, cancPage3, cancPage4, cancPage5};
+
+    private String getCancelationPages() {
+        String pagesString = "";
+        for(int i = 0; i < cancelPages.length; i++) {
+            pagesString += cancelPages[i];
+
+            if(i != cancelPages.length-1) {
+                pagesString += ",";
+            }
+        }
+        return pagesString;
+    }
+
     // Json
-    String strEx = "[{\"id\":\"1\",\"exName\":\"cancelacion\",\"data\":\"4,2,1,0,2,1,2,4,3,2,2,3,4,1,4,2,3,1,0,4,2,0,2,4,3,0,4,0,2,1,3,1,2,1,0,4,0,3,4,3,0,4,1,0,4,2,1,4,1,4,1,0,4,3,2,3,4,1,0,2,1,4,2,0,4,1,3,4,3,1,3,2,3,4,1,2,4,3,2,4,2,4,0,2,3,4,1,0,1,2,0,1,4,1,0,3,0,4,0,4,2,0,1,3,4,1,2,1,4,0,4,3,0,2,1,0,4,3,0,3\",\"sol\":\"4\"},{\"id\":\"5\",\"exName\":\"corsi\",\"data\":\"-1\",\"sol\":\"-1\"},{\"id\":\"2\",\"exName\":\"go-nogo\",\"data\":\"-1\",\"sol\":\"-1\"},{\"id\":\"3\",\"exName\":\"flanker\",\"data\":\"-1\",\"sol\":\"-1\"},{\"id\":\"4\",\"exName\":\"\",\"data\":\"-1\",\"sol\":\"-1\"},{\"id\":\"6\",\"exName\":\"\",\"data\":\"-1\",\"sol\":\"-1\"}],\"success\":\"1\"";
+    String strEx =
+            "[" +
+                "{\"id\":\"1\",\"exName\":\"cancelacion\",\"data\":\"" + getCancelationPages() + "\",\"sol\":\"4\"}," +
+                "{\"id\":\"5\",\"exName\":\"corsi\",\"data\":\"-1\",\"sol\":\"-1\"}," +
+                "{\"id\":\"2\",\"exName\":\"go-nogo\",\"data\":\"-1\",\"sol\":\"-1\"}," +
+                "{\"id\":\"3\",\"exName\":\"flanker\",\"data\":\"-1\",\"sol\":\"-1\"}," +
+                "{\"id\":\"4\",\"exName\":\"\",\"data\":\"-1\",\"sol\":\"-1\"}," +
+                "{\"id\":\"6\",\"exName\":\"\",\"data\":\"-1\",\"sol\":\"-1\"}" +
+            "],\"success\":\"1\"";
     JSONParser jsonParser = new JSONParser();
     JSONArray exercises = null;
 
@@ -115,6 +144,8 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
 
         listener = this;
 
+        //generateRandomCancelPages();
+
         /*conntask = new ConnectionTest();
         conntask.setOnResultsListener(ElegirEjercicioActivity.this, url_prueba, listener);
         conntask.execute();*/
@@ -140,6 +171,29 @@ public class ElegirEjercicioActivity extends AppCompatActivity implements Result
         noConnectionExecution();
 
 
+    }
+
+    private String generateRandomCancelPages() {
+        String newPage = "";
+        int min = 0;
+        int max = 4;
+        int lastNum = 0;
+
+        for(int i = 1; i <= 60; i++) {
+            Random rand = new Random();
+            int num = rand.nextInt(max - min + 1) + min;
+            while(num == lastNum) {
+                num = rand.nextInt(max - min + 1) + min;
+            }
+
+            newPage += num;
+            lastNum = num;
+
+            if(i != 60) {
+                newPage += ",";
+            }
+        }
+        return newPage;
     }
 
     /**
