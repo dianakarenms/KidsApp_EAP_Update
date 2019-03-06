@@ -23,6 +23,8 @@ import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
@@ -58,7 +60,8 @@ public class CancelacionActivity extends AppCompatActivity {
     WebView wv;
 
     //Nombres de los nodos del JSON
-    private boolean endFlag;
+    //private boolean endFlag;
+    private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +106,22 @@ public class CancelacionActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(!endFlag) {
-            if (flag == true) {
+        /*Intent i = new Intent(context, ElegirEjercicioActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);*/
+
+
+        if(flag) {
+            timer.cancel();
+            finish();
+            storeDataInLocalTxt store = new storeDataInLocalTxt(this);
+            store.saveData(userData, "");
+        }
+
+        super.onBackPressed();
+
+        /*if(!endFlag) {
+            if (flag) {
                 Intent i = new Intent(context, ElegirEjercicioActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
@@ -118,7 +135,7 @@ public class CancelacionActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }
+        }*/
     }
 
     View.OnClickListener onClick =  new View.OnClickListener() {
@@ -181,6 +198,7 @@ public class CancelacionActivity extends AppCompatActivity {
                     break;
 
                 case R.id.finalizarBtn:
+                    timer.cancel();
                     if(finalizarBtn.getText() ==  "Siguiente") {
                         userData += adapter.getPickedData();
                         iniciarJuego();
@@ -188,7 +206,7 @@ public class CancelacionActivity extends AppCompatActivity {
                         finalizarBtn.setClickable(false);
                         userData += adapter.getPickedData();
 
-                        endFlag = true;
+                        //endFlag = true;
                         // mostrar gif de fuegos artificiales
                         wv.setVisibility(View.VISIBLE);
                         wv.loadUrl("file:///android_asset/gifs/index.html");
@@ -260,6 +278,8 @@ public class CancelacionActivity extends AppCompatActivity {
         //asignar el objeto gridview a myGrid variable object
         GridView myGrid = findViewById(R.id.gridView);
         myGrid.setAdapter(adapter);
+
+        startTimer();
     }
 
     public void instrucciones(){
@@ -319,10 +339,24 @@ public class CancelacionActivity extends AppCompatActivity {
 
     }
 
-    public ArrayList<String> concat(ArrayList<String> A, ArrayList<String> B) {
-        int bLen = B.size();
-        for(int i = 0; i<bLen; i++)
-            A.add(B.get(i));
-        return A;
+    public void startTimer() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+
+            public void run() {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            finalizarBtn.performClick();
+
+                            /*if(finalizarBtn.getText() ==  "Finalizar") {
+                                cancel();
+                            }*/
+                        }
+                    });
+
+            }
+
+        }, 60000, 60000);
+
     }
 }
