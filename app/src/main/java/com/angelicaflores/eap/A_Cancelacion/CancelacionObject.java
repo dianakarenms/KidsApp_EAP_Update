@@ -10,7 +10,7 @@ public class CancelacionObject {
     String figureName;
     int counterId;
 
-    //contructor
+    //constructor
     CancelacionObject(int imageId, String figureName, int counterId){
         this.imageId = imageId;
         this.figureName = figureName;

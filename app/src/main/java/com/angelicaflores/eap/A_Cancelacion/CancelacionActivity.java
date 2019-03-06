@@ -23,6 +23,7 @@ import com.angelicaflores.eap.R;
 import com.angelicaflores.eap.menuElegirEjercicio.ElegirEjercicioActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,6 +31,20 @@ import static com.angelicaflores.Utils.Constants.getExerciseHeader;
 
 
 public class CancelacionActivity extends AppCompatActivity {
+
+    class CancelacionResult {
+        float Total_ms;
+        int N_A;
+        int N_EC;
+        int N_EO;
+
+        public CancelacionResult(float total_ms, int n_A, int n_EC, int n_EO) {
+            Total_ms = total_ms;
+            N_A = n_A;
+            N_EC = n_EC;
+            N_EO = n_EO;
+        }
+    }
 
     Button finalizarBtn;
     CancelacionAdapter adapter;
@@ -62,6 +77,10 @@ public class CancelacionActivity extends AppCompatActivity {
     //Nombres de los nodos del JSON
     //private boolean endFlag;
     private Timer timer;
+    private long startTime;
+    private HashMap<Integer, CancelacionResult> TR_Map = new HashMap<>();
+    private Integer pageNum = 0;
+    private int numTriangles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,12 +218,17 @@ public class CancelacionActivity extends AppCompatActivity {
 
                 case R.id.finalizarBtn:
                     timer.cancel();
+                    long ellapsedTime = System.currentTimeMillis() - startTime;
+                    userData += adapter.getPickedData();
+                    int N_EOmision = numTriangles-adapter.getNumAciertos();
+                    TR_Map.put(pageNum, new CancelacionResult(ellapsedTime, adapter.getNumAciertos(), adapter.getNumEComision(), N_EOmision));
+
                     if(finalizarBtn.getText() ==  "Siguiente") {
-                        userData += adapter.getPickedData();
+                        //userData += adapter.getPickedData();
                         iniciarJuego();
                     } else { //si finalizar
                         finalizarBtn.setClickable(false);
-                        userData += adapter.getPickedData();
+                        //userData += adapter.getPickedData();
 
                         //endFlag = true;
                         // mostrar gif de fuegos artificiales
@@ -230,7 +254,7 @@ public class CancelacionActivity extends AppCompatActivity {
             finish();
 
             storeDataInLocalTxt store = new storeDataInLocalTxt(context);
-            store.saveData(userData, "");
+            store.saveData(userData, computeData());
         }
     };
 
@@ -274,12 +298,23 @@ public class CancelacionActivity extends AppCompatActivity {
             counter ++;
         }
 
+        numTriangles = getFrecuencyInArray(list, 4);
+        pageNum++;
         adapter = new CancelacionAdapter(context, R.layout.item_cancelacion, list, Integer.parseInt(exSol));
         //asignar el objeto gridview a myGrid variable object
         GridView myGrid = findViewById(R.id.gridView);
         myGrid.setAdapter(adapter);
 
         startTimer();
+    }
+
+    private int getFrecuencyInArray(ArrayList<CancelacionObject> list, int numToSearch) {
+        int counter = 0;
+        for (CancelacionObject obj : list) {
+            if(obj.counterId == numToSearch)
+                counter++;
+        }
+        return counter;
     }
 
     public void instrucciones(){
@@ -340,23 +375,34 @@ public class CancelacionActivity extends AppCompatActivity {
     }
 
     public void startTimer() {
+        startTime = System.currentTimeMillis();
         timer = new Timer();
         timer.schedule(new TimerTask() {
-
             public void run() {
                     runOnUiThread(new Runnable() {
                         public void run() {
                             finalizarBtn.performClick();
-
-                            /*if(finalizarBtn.getText() ==  "Finalizar") {
-                                cancel();
-                            }*/
                         }
                     });
-
             }
-
         }, 60000, 60000);
 
+    }
+
+    private String computeData() {
+        String testData = "Pantalla,Ttotal_ms,N_Aciertos,N_EComisión,N_EOmisión,\n";
+
+        for(int i = 1; i <= pageNum; i++) {
+            // NumEnsayo,TR
+            if(TR_Map.containsKey(i)) {
+                testData += i + "," +
+                        TR_Map.get(i).Total_ms + "," +
+                        TR_Map.get(i).N_A + "," +
+                        TR_Map.get(i).N_EC + "," +
+                        TR_Map.get(i).N_EO + ",\n";
+            }
+        }
+
+        return testData;
     }
 }

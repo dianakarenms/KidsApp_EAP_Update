@@ -29,8 +29,9 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
     int exSol;
 
     /* Variables creadas y modificadas internamente */
-    String pickedData = ""; // array para guardar los datos de cada imagen seleccionada
-    long initTime;  //guarda el tiempo de inicio antes del click
+    private String pickedData = ""; // array para guardar los datos de cada imagen seleccionada
+    private long initTime;  //guarda el tiempo de inicio antes del click
+    private int numAciertos = 0, numErrores = 0;
 
     // Adapter construtor
     CancelacionAdapter(Context context, int layoutResourceId, ArrayList<CancelacionObject> data, int exSol){
@@ -76,6 +77,14 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
         return pickedData;
     }
 
+    public int getNumAciertos() {
+        return numAciertos;
+    }
+
+    public int getNumEComision() {
+        return numErrores;
+    }
+
     //
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
@@ -112,12 +121,15 @@ public class CancelacionAdapter extends ArrayAdapter<CancelacionObject> {
                 Log.i("exSolID", String.valueOf(exSol));
 
                 if (data.get(position).counterId == exSol) {
+                    // figura correcta (verde)
                     btnImg.setBackgroundColor(0xFF2fac66);
                     btnImg.setEnabled(false);
+                    numAciertos++;
                 } else {
                     // figura incorrecta (rojo)
                     btnImg.setBackgroundColor(0xFFbf4c5b);
                     btnImg.setEnabled(false);
+                    numErrores++;
                 }
                 // una vez hecho el click se toma el tiempo actual y se le resta el tiempo anterior
                 long elapsedTime = android.os.SystemClock.uptimeMillis() - initTime;
